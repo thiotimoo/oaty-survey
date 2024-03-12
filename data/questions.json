@@ -1,0 +1,432 @@
+{
+    "1A": {
+        "question": "Kamu terbangun dari tidurmu yang pulas, dengan alarm yang berbunyi keras, apa yang langsung kamu lakukan?",
+        "choices": [
+            {
+                "body": "Mematikan alarm dan langsung melakukan bersiap-siap pergi ke sekolah",
+                "points": 0,
+                "nextQuestion": "2A"
+            },
+            {
+                "body": "Mematikan alarm dan duduk selama 1 menit baru bersiap-siap pergi ke sekolah",
+                "points": -1,
+                "nextQuestion": "2A"
+            }
+        ]
+    },
+    "2A": {
+        "question": "Saat kamu mandi kamu teringat akan tugas matematika yang belum kamu kerjakan",
+        "choices": [
+            {
+                "body": "Kamu langsung ingin menyelesaikan tugas matematika itu sekarang",
+                "points": 1,
+                "nextQuestion": "3A"
+            },
+            {
+                "body": "Kamu berdoa agar gurumu lupa untuk menanyakan tugas tersebut",
+                "points": -1,
+                "nextQuestion": "3A"
+            }
+        ]
+    },
+    "3A": {
+        "question": "Kamu berhasil menyelesaikan tugas dan datang tepat waktu dan dapat mengumpulkan tugasnya",
+        "choices": [
+            {
+                "body": "Skip ke no 6A",
+                "points": 0,
+                "nextQuestion": "6A"
+            }
+        ]
+    },
+    "3B": {
+        "question": "Kamu pergi kesekolah dengan tepat waktu, saat pelajaran matematika guru menyuruh semua anak murid mengumpulkan tugas tersebut",
+        "choices": [
+            {
+                "body": "Kamu tetap santai dan jujur kepada gurunya (Go to B1)",
+                "points": -2,
+                "nextQuestion": "4B1"
+            },
+            {
+                "body": "Kamu cemas dan memikirkan alasan yang akan kamu berikan kepada guru mu (Go to B2)",
+                "points": 1,
+                "nextQuestion": "4B2"
+            }
+        ]
+    },
+    "4B1": {
+        "question": "Kamu disuruh berdiri didepan kelas selama jam matematika apa yang akan kamu lakukan?",
+        "choices": [
+            {
+                "body": "Menerima hukuman tersebut dan merasa malu tetapi karena temanmu ada yang dihukum kamu tidak terlalu merasa malu lagi (Lanjut no 5A)",
+                "points": 0,
+                "nextQuestion": "5A"
+            },
+            {
+                "body": "Menerima hukuman tersebut sambil menahan malu dan memikirkan merenung melihat orang lain yang sedang membicarakan kamu (Lanjut No 5A)",
+                "points": 1,
+                "nextQuestion": "5A"
+            }
+        ]
+    },
+    "5A": {
+        "question": "Bel istirahat pun berbunyi, lalu saat makan bersama teman-teman mu, teman mu membuat jokes dari kejadian saat kamu dihukum tadi",
+        "choices": [
+            {
+                "body": "Kamu tertawa bersama teman mu setelah itu kamu melupakan hal tersebut (Lanjut no 6A)",
+                "points": -1,
+                "nextQuestion": "6A"
+            },
+            {
+                "body": "Kamu tertawa bersama temanmu sambil menahan malu (Lanjut no 6A)",
+                "points": 1,
+                "nextQuestion": "6A"
+            }
+        ]
+    },
+    "6A": {
+        "question": "Istirahat pun selesai dan kalian melanjutkan pelajaran, saat pelajaran bahasa indonesia salah satu dari murid dimintai membuat puisi dan maju kedepan",
+        "choices": [
+            {
+                "body": "Diam dan menunggu orang lain maju karena kalian malas (Next to 7A)",
+                "points": 0,
+                "nextQuestion": "7A"
+            },
+            {
+                "body": "Diam dan menunggu orang lain maju karena kalian takut salah membuat puisi (Next to 7A)",
+                "points": 1,
+                "nextQuestion": "7B"
+            },
+            {
+                "body": "Langsung membuat puisi dan maju (Next to 7B)",
+                "points": -1,
+                "nextQuestion": "7B"
+            }
+        ]
+    },
+    "7A": {
+        "question": "Salah satu murid kalian maju dan mendapatkan nilai tambahan",
+        "choices": [
+            {
+                "body": "harusnya gw maju aja tadi, puisinya juga mirip sama yang gw pikirin (Next 8A)",
+                "points": 1,
+                "nextQuestion": "8A"
+            },
+            {
+                "body": "Bodoamat lah (Next 8A)",
+                "points": -1,
+                "nextQuestion": "8A"
+            }
+        ]
+    },
+    "7B": {
+        "question": "Kamu maju dan mendapatkan nilai tetapi kamu dikritik sedikit oleh gurumu",
+        "choices": [
+            {
+                "body": "Duh malu banget masih ada yang salah (Next 8A)",
+                "points": 1,
+                "nextQuestion": "8A"
+            },
+            {
+                "body": "Horee dapet nilai tambahan (Next 8A)",
+                "points": -1,
+                "nextQuestion": "8A"
+            }
+        ]
+    },
+    "8A": {
+        "question": "Bel istirahat ke 2 pun berbunyi, saat kamu pergi ke kantin kamu tidak sengaja menjatuhkan kopi ke jaket perempuan/pria yang kamu tidak kenal, dan perempuan/pria tersebut memarahi mu",
+        "choices": [
+            {
+                "body": "Diam dan pergi meninggalkannya (Next 9A)",
+                "points": -1,
+                "nextQuestion": "9A"
+            },
+            {
+                "body": "Minta maaf dan pergi (Next 9A)",
+                "points": 0,
+                "nextQuestion": "9A"
+            },
+            {
+                "body": "Kamu minta maaf berkali-kali lalu pergi (Next to 9A)",
+                "points": 1,
+                "nextQuestion": "9A"
+            }
+        ]
+    },
+    "9A": {
+        "question": "Saat dikantin kamu bertemu dengan perempuan/pria itu lagi",
+        "choices": [
+            {
+                "body": "Abaikan dan lanjut mengobrol dengan teman-teman (Next 11A)",
+                "points": -1,
+                "nextQuestion": "11A"
+            },
+            {
+                "body": "Kamu berinisiatif minta maaf dan menawari untuk membersihkan jaketnya perempuan/pria tersebut memaafkan mu (Next 10A)",
+                "points": 1,
+                "nextQuestion": "10A"
+            }
+        ]
+    },
+    "10A": {
+        "question": "Perempuan/Pria tersebut menerima tawaran dari kamu dan memaafkan mu",
+        "choices": [
+            {
+                "body": "Next 10A",
+                "points": 0,
+                "nextQuestion": "11A"
+            }
+        ]
+    },
+    "11A": {
+        "question": "Bel masuk pun berbunyi, di jam pelajaran terakhir kalian disuruh berkelompok dan mendiskusikan materi yang diajarkan",
+        "choices": [
+            {
+                "body": "Kamu langsung ikut memberikan saran (Next 12A)",
+                "points": -1,
+                "nextQuestion": "12A"
+            },
+            {
+                "body": "Kamu menunggu dan mengamati saran-saran dari teman mu terlebih dahulu (Next 12B)",
+                "points": 0,
+                "nextQuestion": "12B"
+            },
+            {
+                "body": "Kamu mempunyai saran tapi kamu memilih tidak mengungkapkan nya karena takut salah (Next 12B)",
+                "points": 1,
+                "nextQuestion": "12B"
+            }
+        ]
+    },
+    "12A": {
+        "question": "Saran kamu ditolak oleh teman mu",
+        "choices": [
+            {
+                "body": "Kamu berdebat dengan serius (Next 13A)",
+                "points": -1,
+                "nextQuestion": "13A"
+            },
+            {
+                "body": "Kamu menerimanya dengan lapang dada (Next 14A)",
+                "points": 0,
+                "nextQuestion": "14A"
+            },
+            {
+                "body": "Kamu diam dan merenung (Next 14A)",
+                "points": 1,
+                "nextQuestion": "14A"
+            }
+        ]
+    },
+    "12B": {
+        "question": "Teman mu meminta saran dari mu",
+        "choices": [
+            {
+                "body": "Tetap memendam ide karena takut dibilang 'ide yang aneh' (Next 13B)",
+                "points": 1,
+                "nextQuestion": "13B"
+            },
+            {
+                "body": "Akhirnya kamu mengasih saran yang kamu pendam tadi (Next 13B)",
+                "points": 0,
+                "nextQuestion": "13B"
+            }
+        ]
+    },
+    "13A": {
+        "question": "Teman-teman yang lain lebih memilih lawan debat mu",
+        "choices": [
+            {
+                "body": "Kamu kesal tetapi tetap mengikuti diskusi tersebut (Next 14A)",
+                "points": 0,
+                "nextQuestion": "14A"
+            },
+            {
+                "body": "Kamu akhirnya menerima saran teman mu (Next 14A)",
+                "points": 0,
+                "nextQuestion": "14A"
+            },
+            {
+                "body": "Kamu merasa malu karena teman-teman mu tidak mendukung mu (Next 14A)",
+                "points": 1,
+                "nextQuestion": "14A"
+            }
+        ]
+    },
+    "13B": {
+        "question": "Saran kamu ditolak oleh teman-teman mu",
+        "choices": [
+            {
+                "body": "Kamu tidak peduli dengan hal tersebut karena sudah mengetahui akan ditolak (Next 14A)",
+                "points": -1,
+                "nextQuestion": "14A"
+            },
+            {
+                "body": "Kamu nyesel ungkapin ide mu dan membulatkan tekad gaakan ngasih ide lagi (Next 14A)",
+                "points": 1,
+                "nextQuestion": "14A"
+            }
+        ]
+    },
+    "14A": {
+        "question": "Bel pulang pun berbunyi, teman mu mengajak mu bermain badminton",
+        "choices": [
+            {
+                "body": "Kamu langsung mengiyakan ajakan teman mu tanpa izin ke orang tua (Next 15A)",
+                "points": -1,
+                "nextQuestion": "15A"
+            },
+            {
+                "body": "Kamu izin ke orang tua terlebih dahulu (Next 15B)",
+                "points": 0,
+                "nextQuestion": "15B"
+            }
+        ]
+    },
+    "15A": {
+        "question": "Kamu pergi bermain selama hingga lupa waktu, saat kamu melihat hp kamu di telfon 11x dari orang tua kamu",
+        "choices": [
+            {
+                "body": "Tetap santai dan menjelaskan secara detail lewat chat (Next 16A)",
+                "points": -1,
+                "nextQuestion": "16A"
+            },
+            {
+                "body": "Kamu panik dan buru-buru telpon orang tua (Next 16B)",
+                "points": 1,
+                "nextQuestion": "16B"
+            }
+        ]
+    },
+    "15B": {
+        "question": "Kamu di ijinkan bermain, akhirnya kalian Kamu pergi bermain tetapi kamu lupa waktu, saat kamu melihat hp kamu di telfon 11x dari orang tua kamu",
+        "choices": [
+            {
+                "body": "Tetap santai dan menjelaskan secara detail lewat chat (Next 16A)",
+                "points": -1,
+                "nextQuestion": "16A"
+            },
+            {
+                "body": "Kamu panik dan buru-buru telpon orang tua (Next 16B)",
+                "points": 1,
+                "nextQuestion": "16B"
+            }
+        ]
+    },
+    "16A": {
+        "question": "Orang tua kamu memahami alasan kamu dan kamu pun pergi pulang kerumah (Next 19A)",
+        "choices": [
+            {
+                "body": "Next 19A",
+                "points": 0,
+                "nextQuestion": "19A"
+            }
+        ]
+    },
+    "16B": {
+        "question": "Ternyata orang tua kamu tidak mengangkat telepon dari kamu",
+        "choices": [
+            {
+                "body": "Kamu panik dan langsung otw pulang dan menjelaskan secara langsung (Next 17A)",
+                "points": 1,
+                "nextQuestion": "17A"
+            },
+            {
+                "body": "Kamu berpikir orang tua mu lagi sibuk lalu kamu otw pulang (Next 17B)",
+                "points": 0,
+                "nextQuestion": "17B"
+            }
+        ]
+    },
+    "17A": {
+        "question": "Saat kamu dijalan dan terjebak macet",
+        "choices": [
+            {
+                "body": "Memikirkan alasan yang mau diberikan kepada orang tua mu (Next 18A)",
+                "points": 1,
+                "nextQuestion": "18A"
+            },
+            {
+                "body": "Kamu sudah lebih tenang karena sudah di jalan pulang (Next 18A)",
+                "points": 0,
+                "nextQuestion": "18A"
+            }
+        ]
+    },
+    "18A": {
+        "question": "Saat tiba dirumah kamu menjelaskan kepada orang tua, orang tua kamu pun memahaminya dan kamu pergi membersihkan badan (Next 19A)",
+        "choices": [
+            {
+                "body": "Next 19A",
+                "points": 0,
+                "nextQuestion": "19A"
+            }
+        ]
+    },
+    "19A": {
+        "question": "Kamu pun bingung mau ngapain saat dikamar, tiba-tiba seorang teman mu mengirimkan pesan 'Besok ulangan, lu udh belajar?'",
+        "choices": [
+            {
+                "body": "Kamu panik dan langsung pergi belajar (Next to 20A)",
+                "points": 1,
+                "nextQuestion": "20A"
+            },
+            {
+                "body": "Memastikan besok beneran ulangan atau ga (Next 20B)",
+                "points": 0,
+                "nextQuestion": "20B"
+            },
+            {
+                "body": "Kamu ga peduli dengan ulangan karena kamu sudah cape dan pergi tidur (Ending 1)",
+                "points": -1,
+                "nextQuestion": "END1"
+            }
+        ]
+    },
+    "20A": {
+        "question": "Setelah belajar 2Jam kamu tetap tidak paham dengan materi tersebut",
+        "choices": [
+            {
+                "body": "Panik dan tetap melanjutkan belajar hingga jam 12 (Next 21A)",
+                "points": 1,
+                "nextQuestion": "21A"
+            },
+            {
+                "body": "Pasrah lalu pergi tidur dan berdoa untuk nilai yang bagus buat besok (Ending 2)",
+                "points": 0,
+                "nextQuestion": "END2"
+            }
+        ]
+    },
+    "20B": {
+        "question": "Ternyata besok beneran ulangan dan kamu segera belajar",
+        "choices": [
+            {
+                "body": "Panik dan tetap melanjutkan belajar hingga jam 12 (Next 21A)",
+                "points": 1,
+                "nextQuestion": "21A"
+            },
+            {
+                "body": "Pasrah lalu pergi tidur dan berdoa untuk nilai yang bagus buat besok (Ending 2)",
+                "points": 0,
+                "nextQuestion": "END2"
+            }
+        ]
+    },
+    "21A": {
+        "question": "Sudah jam 12 malam tapi kamu belum hafal semua pelajarannya, dan akhirnya kamu mencoba tidur",
+        "choices": [
+            {
+                "body": "Gabisa tidur karena kepikiran nilai ulangan besok (Ending 3)",
+                "points": 1,
+                "nextQuestion": "END3"
+            },
+            {
+                "body": "Pasrah dan berdoa agar ulangan besok bagus nilainya (Ending 2)",
+                "points": 0,
+                "nextQuestion": "END2"
+            }
+        ]
+    }
+}
