@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChoicesLayout from "./ChoicesLayout";
 
 const QuizLayout = ({ data, session_id }: any) => {
@@ -8,6 +8,9 @@ const QuizLayout = ({ data, session_id }: any) => {
     const handlerLoading = (data: boolean) => {
         setLoading(data)
     }
+    useEffect(()=> {
+        handlerLoading(false);
+    }, [data])
     return (
         <motion.div
         initial={{ y: 0, opacity: 0 }}
