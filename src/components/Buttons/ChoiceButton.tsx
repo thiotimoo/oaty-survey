@@ -16,8 +16,8 @@ const ChoiceButton = ({
         setLoading(true);
         const res = await answerQuestion(session_id, choice);
         if (res) {
-            setLoading(false);
             router.refresh();
+            setLoading(false);
         }
     };
     let bgButton = "";
