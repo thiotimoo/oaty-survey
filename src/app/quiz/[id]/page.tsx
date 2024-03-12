@@ -1,6 +1,8 @@
 import { useRouter } from "next/navigation";
 import ChoiceButton from "@/components/Buttons/ChoiceButton";
 import React from "react";
+import ChoicesLayout from "@/components/Layout/ChoicesLayout";
+import QuizLayout from "@/components/Layout/QuizLayout";
 const getQuestion = async (id: string) => {
     const question = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/survey/question?id=${id}`,
@@ -29,7 +31,7 @@ const QuizPage = async ({ params }: any) => {
         data.question === "FINISHED" ? (
             <QuizFinished data={data} session_id={id} />
         ) : (
-            <QuizUI data={data} session_id={id} />
+            <QuizLayout data={data} session_id={id} />
         )
     ) : (
         "Quiz is not valid"
@@ -44,25 +46,6 @@ const QuizFinished = async ({ data, session_id }: any) => {
             <h2>{result.points}</h2>
         </div>
     ) : "Result not found";
-};
-const QuizUI = async ({ data, session_id }: any) => {
-    return (
-        <div className="flex flex-col">
-            <h2>{data.question}</h2>
-            <div className="flex flex-col">
-                {data.choices.map((choice: any, index: number) => {
-                    return (
-                        <ChoiceButton
-                            choice={choice}
-                            key={index}
-                            index={index}
-                            session_id={session_id}
-                        />
-                    );
-                })}
-            </div>
-        </div>
-    );
 };
 
 export default QuizPage;
