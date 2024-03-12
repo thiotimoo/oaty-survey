@@ -8,6 +8,7 @@ export async function answerQuestion(session_id: string, choice: number) {
     const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/survey/quiz`,
         {
+            cache: "no-store",
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,6 +30,7 @@ export async function createSession() {
         const res = await fetch(
             `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/survey/new-session`,
             {
+                cache: "no-store",
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
