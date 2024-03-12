@@ -55,6 +55,7 @@ const QuizUI = async ({ data, session_id }: any) => {
                         <ChoiceButton
                             choice={choice}
                             key={index}
+                            index={index}
                             session_id={session_id}
                         />
                     );

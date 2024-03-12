@@ -53,7 +53,6 @@ async function onQuizAnswer(session_id: string, choice: number) {
 export async function POST(req: Request) {
     await connectDatabase();
     const resData = await req.json();
-    console.log(resData);
     if (!resData)
         return Response.json({ statusCode: 400, error: "Invalid Request" });
 
