@@ -54,7 +54,7 @@ const QuizLayout = ({ data, session_id }: any) => {
                     <motion.div
                         initial={{ y: 0, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ ease: cubicBezier(0.25, 0.1, 0.25, 1), delay: 1 }}
+                        transition={{ ease: cubicBezier(0.25, 0.1, 0.25, 1), delay: 0.5 }}
                         role="status"
                         className="m-auto"
                     >
