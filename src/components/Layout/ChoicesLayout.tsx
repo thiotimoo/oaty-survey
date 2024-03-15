@@ -16,6 +16,7 @@ const ChoicesLayout = ({data, session_id, loading, setLoading}: any) => {
                 return (
                     <ChoiceButton
                         choice={choice}
+                        data={data}
                         key={index}
                         index={index}
                         session_id={session_id}

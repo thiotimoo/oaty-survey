@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+    scrollbar-gutter: stable;
+  }
+  
 body {
     background-color: #e5dbe4;
     background-color: #e5dbdb;

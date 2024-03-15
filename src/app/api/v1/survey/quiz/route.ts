@@ -3,9 +3,11 @@ import { getQuestion, getQuestionChoice } from "@/lib/questions";
 import QuizResult from "@/model/QuizResult";
 import QuizSession from "@/model/QuizSession";
 
-async function onQuizAnswer(session_id: string, choice: number) {
+async function onQuizAnswer(session_id: string, question_id: string, choice: number) {
     try {
         const session = await QuizSession.findById(session_id);
+        if (question_id != session.currentQuestion)
+            return Response.json({ statusCode: 400, error: "Invalid Choice" });
         const choiceData = await getQuestionChoice(
             session.currentQuestion,
             choice
@@ -58,6 +60,7 @@ export async function POST(req: Request) {
 
     const action_type = resData?.type?.toString();
     const session_id = resData?.session_id?.toString();
+    const question_id = resData?.question_id?.toString();
 
     if (!action_type)
         return Response.json({ statusCode: 400, error: "Invalid Action Type" });
@@ -74,7 +77,7 @@ export async function POST(req: Request) {
                     error: "Invalid Choice",
                 });
 
-            return onQuizAnswer(session_id, choice);
+            return onQuizAnswer(session_id, question_id, choice);
         default:
             return Response.json({
                 statusCode: 400,

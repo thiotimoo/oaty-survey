@@ -1,7 +1,8 @@
-export async function answerQuestion(session_id: string, choice: number) {
+export async function answerQuestion(session_id: string, question_id: string, choice: number) {
     const data = {
         type: "ANSWER",
         session_id: session_id,
+        question_id: question_id,
         choice: choice,
     };
 
