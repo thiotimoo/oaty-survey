@@ -32,7 +32,7 @@ const MainLayout = () => {
             <motion.div
                 initial={{ y: 0, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ ease: cubicBezier(0.25, 0.1, 0.25, 1), delay: 2 }}
+                transition={{ ease: cubicBezier(0.25, 0.1, 0.25, 1), delay: 1 }}
                 role="status"
                 className="w-full h-full flex justify-center items-center"
             >
