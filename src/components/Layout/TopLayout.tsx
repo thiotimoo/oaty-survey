@@ -7,9 +7,9 @@ const TopLayout = ({ data, session_id, loading, setLoading }: any) => {
     const completionPercent = Math.floor((Number.parseInt(questionNum) / 22) * 100);
     return (
         <div className="flex flex-col w-full p-2">
-            <div className="w-full rounded-full bg-yellow-100 h-2 flex items-start justify-start">
+            <div className="w-full rounded-full bg-zinc-400 h-2 flex items-start justify-start">
                 <div
-                    className={`rounded-full bg-amber-600 h-2 transition-all`}
+                    className={`rounded-full bg-zinc-900 h-2 transition-all`}
                     style={{width: completionPercent + "%"}}
                 />
             </div>

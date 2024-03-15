@@ -60,7 +60,7 @@ const QuizLayout = ({ data, session_id }: any) => {
                     >
                         <svg
                             aria-hidden="true"
-                            className="w-8 h-8 text-amber-100 animate-spin dark:text-amber-100 fill-amber-600"
+                            className="w-8 h-8 text-zinc-400 animate-spin fill-zinc-900"
                             viewBox="0 0 100 101"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
