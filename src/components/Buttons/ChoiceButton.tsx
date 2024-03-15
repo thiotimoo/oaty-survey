@@ -41,7 +41,7 @@ const ChoiceButton = ({
         <button
             disabled={loading}
             key={index}
-            className={`flex-1 w-full ${bgButton} p-4 rounded-2xl text-lg font-semibold disabled:opacity-20 transition-all border-2 border-b-4 disabled:border-b-2`}
+            className={`flex-1 w-full ${bgButton} p-4 rounded-2xl text-lg font-semibold disabled:opacity-20 transition-all border-2 border-b-4 disabled:border-b-2 font-mono`}
             onClick={() => onAnswer(index)}
         >
             <h2>{choice.body}</h2>
