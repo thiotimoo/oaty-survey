@@ -3,8 +3,8 @@ import React from "react";
 
 const RPGLayout = ({ data, session_id, loading, setLoading }: any) => {
     return (
-        <div className="flex items-center justify-center px-4 w-full max-w-screen-md h-full flex-grow ">
-            <div className="bg-yellow-100 outline outline-black border-inherit rounded-2xl w-full h-full flex items-center justify-center relative overflow-clip">
+        <div className="flex items-center justify-center px-4 w-full h-40">
+            <div className="bg-yellow-100 outline outline-black border-inherit rounded-2xl w-full h-full flex items-center justify-center relative overflow-clip max-w-screen-md ">
                 <Image
                     src="/assets/bg1.jpg"
                     alt="Portrait"

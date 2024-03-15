@@ -25,8 +25,8 @@ const TopLayout = ({ data, session_id, loading, setLoading }: any) => {
                     height={200}
                 />
                 <div className="flex-1 flex items-center justify-end">
-                    <p className="bg-black rounded-full px-6 py-2 text-white font-bold font-mono mx-2 text-lg tracking-widest">
-                        {questionNum}
+                    <p className="bg-red-200  rounded-full px-6 py-2 text-black outline outline-2 outline-black font-bold font-mono mx-2 text-lg tracking-widest">
+                        {data.id}
                     </p>
                 </div>
             </div>
