@@ -14,7 +14,9 @@ export async function getAllQuestions() {
 }
 
 export async function getQuestion(id: string) {
-    return (await getAllQuestions())[id];
+    let data = (await getAllQuestions())[id];
+    data.id = id
+    return data;
 }
 
 export async function getQuestionChoice(id: string, choice: number) {

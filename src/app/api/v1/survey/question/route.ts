@@ -24,7 +24,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
             case "END3":
                 return Response.json({
                     statusCode: 200,
-                    data: { question: "FINISHED", ending: id },
+                    data: { question: "FINISHED", id: id, ending: id },
                 });
             default:
                 return Response.json({

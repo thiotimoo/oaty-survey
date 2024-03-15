@@ -46,6 +46,7 @@ const QuizFinished = async ({ data, session_id }: any) => {
             <h2>{result.points}</h2>
         </div>
     ) : "Result not found";
+    
 };
 
 export default QuizPage;

@@ -11,7 +11,7 @@ const ChoicesLayout = ({data, session_id, loading, setLoading}: any) => {
         <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className={`flex ${flexOrientation} max-w-lg w-full gap-4 p-4`}>
+        className={`flex ${flexOrientation} max-w-screen-md w-full gap-4 p-4 bg-white rounded-t-2xl`}>
             {data?.choices?.map((choice: any, index: number) => {
                 return (
                     <ChoiceButton
