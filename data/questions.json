@@ -33,7 +33,7 @@
         "question": "Kamu berhasil menyelesaikan tugas dan datang tepat waktu dan dapat mengumpulkan tugasnya",
         "choices": [
             {
-                "body": "Skip ke no 6A",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "6A"
             }
@@ -173,7 +173,7 @@
         "question": "Perempuan/Pria tersebut menerima tawaran dari kamu dan memaafkan mu",
         "choices": [
             {
-                "body": "Next 10A",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "11A"
             }
@@ -318,7 +318,7 @@
         "question": "Orang tua kamu memahami alasan kamu dan kamu pun pergi pulang kerumah (Next 19A)",
         "choices": [
             {
-                "body": "Next 19A",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "19A"
             }
@@ -358,7 +358,7 @@
         "question": "Saat tiba dirumah kamu menjelaskan kepada orang tua, orang tua kamu pun memahaminya dan kamu pergi membersihkan badan (Next 19A)",
         "choices": [
             {
-                "body": "Next 19A",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "19A"
             }
