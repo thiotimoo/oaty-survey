@@ -2,8 +2,8 @@ import Image from "next/image";
 import React from "react";
 import ExitQuizButton from "../Buttons/ExitQuizButton";
 
-const TopLayout = ({ data, session_id, loading, setLoading }: any) => {
-    const questionNum = data.id.replace(/\D/g, "");
+const TopLayout = ({ data, scenario,  loading, setLoading }: any) => {
+    const questionNum = scenario.replace(/\D/g, "");
     const completionPercent = Math.floor((Number.parseInt(questionNum) / 22) * 100);
     return (
         <div className="flex flex-col w-full p-2">
@@ -26,7 +26,7 @@ const TopLayout = ({ data, session_id, loading, setLoading }: any) => {
                 />
                 <div className="flex-1 flex items-center justify-end">
                     <p className="bg-red-200  rounded-full px-6 py-2 text-black outline outline-2 outline-black font-bold font-mono mx-2 text-lg tracking-widest">
-                        {data.id}
+                        {scenario}
                     </p>
                 </div>
             </div>

@@ -1,53 +1,32 @@
 import connectDatabase from "@/lib/connect-db";
-import { getQuestion, getQuestionChoice } from "@/lib/questions";
-import QuizResult from "@/model/QuizResult";
-import QuizSession from "@/model/QuizSession";
+import { getAllQuestions } from "@/lib/questions";
+import QuizReport from "@/model/QuizReport";
+import { createCanvas, loadImage, registerFont } from "canvas";
+import { NextRequest, NextResponse } from "next/server";
+import path from "path";
 
-async function onQuizAnswer(session_id: string, question_id: string, choice: number) {
+registerFont(path.join(process.cwd(), "/data/assets/fonts/Jua-Regular.ttf"), {
+    family: "Jua",
+});
+
+async function onQuizSubmit(user: any, answers: any) {
     try {
-        const session = await QuizSession.findById(session_id);
-        if (question_id != session.currentQuestion)
-            return Response.json({ statusCode: 400, error: "Invalid Choice" });
-        const choiceData = await getQuestionChoice(
-            session.currentQuestion,
-            choice
-        );
-        if (!choiceData)
-            return Response.json({ statusCode: 400, error: "Invalid Choice" });
-
-        const update = {
-            $inc: { points: choiceData.points },
-            currentQuestion: choiceData.nextQuestion,
-            finished: false,
-        };
-
-        if (choiceData.nextQuestion.startsWith("END")) {
-            // Generate final result
-            update.finished = true;
-            const updated_session = await QuizSession.findByIdAndUpdate(
-                session_id,
-                update
-            );
-
-            const data = {
-                _id: session_id,
-                username: session.username,
-                points: session.points,
-            };
-
-            await QuizResult.findByIdAndUpdate(session_id, data, {
-                upsert: true,
-            });
-            return Response.json({ statusCode: 200, data: updated_session });
-        } else {
-            const updated_session = await QuizSession.findByIdAndUpdate(
-                session_id,
-                update
-            );
-
-            return Response.json({ statusCode: 200, data: updated_session });
+        const allQuestion = await getAllQuestions();
+        let points = 0;
+        for (let i = 0; i < answers.length; i++){
+            const answer = answers[i];
+            const choice = allQuestion[answer.scenario].choices[answer.choice];
+            points += choice.points
         }
+        const doc = new QuizReport({
+            user: user,
+            answers: answers,
+            points: points,
+        });
+        const result = await doc.save();
+        return Response.json({ statusCode: 200, data: result });
     } catch (error) {
+        console.error(error)
         return Response.json({ statusCode: 400, error: error });
     }
 }
@@ -57,27 +36,17 @@ export async function POST(req: Request) {
     const resData = await req.json();
     if (!resData)
         return Response.json({ statusCode: 400, error: "Invalid Request" });
-
+    const user: any = resData?.user;
+    
     const action_type = resData?.type?.toString();
-    const session_id = resData?.session_id?.toString();
-    const question_id = resData?.question_id?.toString();
 
     if (!action_type)
         return Response.json({ statusCode: 400, error: "Invalid Action Type" });
-    if (!session_id)
-        return Response.json({ statusCode: 400, error: "Invalid Session ID" });
 
     switch (action_type) {
-        case "ANSWER":
-            const choice = Number.parseInt(resData?.choice?.toString() || "-1");
-            if (choice == null || choice == -1)
-                return Response.json({
-                    statusCode: 40,
-                    type: action_type,
-                    error: "Invalid Choice",
-                });
-
-            return onQuizAnswer(session_id, question_id, choice);
+        case "SUBMIT":
+            const answers: any = resData?.answers;
+            return onQuizSubmit(user, answers);
         default:
             return Response.json({
                 statusCode: 400,
@@ -86,12 +55,56 @@ export async function POST(req: Request) {
     }
 }
 
-export async function GET(req: Request, res: Response) {
+async function generateImage(result: any) {
+    const canvas = createCanvas(1080, 1920);
+    const ctx = canvas.getContext("2d");
+
+    // Draw line under text
+
+    // Draw cat with lime helmet
+    const image = await loadImage(
+        path.join(process.cwd(), "/data/assets/result-ovito.jpg")
+    );
+    ctx.drawImage(image, 0, 0, 1080, 1920);
+    // Write "Awesome!"
+    ctx.font = "40px Jua";
+    ctx.textAlign = "left";
+    ctx.fillText(result.user.username, 100, 125);
+
+    ctx.font = "30px Jua";
+    ctx.textAlign = "left";
+    ctx.fillText(result.id, 100, 165);
+    return canvas.toDataURL();
+}
+
+export async function GET(req: NextRequest, res: NextResponse) {
     await connectDatabase();
+
+    const { searchParams } = new URL(req.url);
+    //const id = searchParams.get("id") || "1A";
+    const resultId = searchParams.get("id");
+    if (!resultId)
+        return Response.json({
+            statusCode: 400,
+            error: "Result ID Not Found!",
+        });
     try {
-        return Response.json({ statusCode: 200, data: "New Session" });
+        const result = await QuizReport.findById(resultId);
+        if (result) {
+            
+            const image_url = await generateImage(result);
+            return Response.json({
+                statusCode: 200,
+                data: { result: result, image_url },
+            });
+        } else {
+            return Response.json({
+                statusCode: 400,
+                error: "Result Not Found",
+            });
+        }
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return Response.json({ statusCode: 400, error: error });
     }
 }

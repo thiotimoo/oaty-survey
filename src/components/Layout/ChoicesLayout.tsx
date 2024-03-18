@@ -3,7 +3,7 @@ import { cubicBezier, motion } from "framer-motion";
 import React from "react";
 import ChoiceButton from "../Buttons/ChoiceButton";
 
-const ChoicesLayout = ({data, session_id, loading, setLoading}: any) => {
+const ChoicesLayout = ({data, scenario, handleScenario, handleAnswers}: any) => {
     let flexOrientation = "flex-row";
     if (data?.choices?.length > 2)
     flexOrientation = "flex-col"
@@ -21,9 +21,9 @@ const ChoicesLayout = ({data, session_id, loading, setLoading}: any) => {
                         data={data}
                         key={index}
                         index={index}
-                        session_id={session_id}
-                        loading={loading}
-                        setLoading={setLoading}
+                        scenario={scenario}
+                        handleAnswers={handleAnswers}
+                        handleScenario={handleScenario}
                     />
                 );
             })}

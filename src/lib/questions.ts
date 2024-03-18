@@ -13,6 +13,7 @@ export async function getAllQuestions() {
     return data;
 }
 
+
 export async function getQuestion(id: string) {
     let data = (await getAllQuestions())[id];
     data.id = id

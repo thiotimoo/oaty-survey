@@ -7,19 +7,19 @@ import React from "react";
 const ChoiceButton = ({
     data,
     choice,
+    scenario,
     index,
-    session_id,
-    loading,
-    setLoading,
+    handleAnswers,
+    handleScenario
 }: any) => {
     const router = useRouter();
     const onAnswer = async (choice: number) => {
-        setLoading(true);
-        const res = await answerQuestion(session_id, data.id, choice);
-        if (res) {
+        handleAnswers({scenario: scenario, choice: choice},data.choices[choice].nextQuestion);
+        /*if (res) {
             router.refresh();
+            
             //setLoading(false);
-        }
+        }*/
     };
     let bgButton = "";
     switch (index) {
@@ -39,7 +39,6 @@ const ChoiceButton = ({
 
     return (
         <button
-            disabled={loading}
             key={index}
             className={`flex-1 w-full ${bgButton} p-4 rounded-2xl text-lg font-semibold disabled:opacity-20 transition-all border-2 border-b-4 disabled:border-b-2 font-mono`}
             onClick={() => onAnswer(index)}

@@ -5,56 +5,101 @@ import ChoicesLayout from "./ChoicesLayout";
 import QuestionLayout from "./QuestionLayout";
 import TopLayout from "./TopLayout";
 import RPGLayout from "./RPGLayout";
+import { fetchAllQuestions, submitQuiz } from "@/lib/client-quiz";
+import { useRouter } from "next/navigation";
 
-const QuizLayout = ({ data, session_id }: any) => {
+const QuizLayout = () => {
+    const router = useRouter();
     const [loading, setLoading] = useState(false);
-    const handleLoading = (data: boolean) => {
-        setLoading(data);
+    const [scenario, setScenario] = useState("1A");
+    const [collection, setCollection]: any = useState();
+    const [questionData, setQuestionData]: any = useState();
+    const [answers, setAnswers]: any = useState([]);
+    const handleLoading = (newState: any) => {
+        setLoading(newState);
+    };
+
+    const handleScenario = async (newScenario: any) => {
+        setScenario(newScenario);
+    };
+
+    const handleAnswers = async (newAnswer: any, newScenario: string) => {
+        if (newScenario.startsWith("END")) {
+            const dummyUser = {
+                username: "Udin",
+                gender: 0,
+                age: 15,
+                school: "SMA Yos Sudarso Karawang",
+                class: "10.1",
+            };
+            handleLoading(true);
+            const quiz = await submitQuiz(dummyUser, answers);
+            if (quiz.statusCode == 200) {
+                router.replace(`/result/${quiz.data._id}`)
+            } else {
+                console.error(quiz.error);
+                handleLoading(false);
+            }
+        } else {
+            handleScenario(newScenario);
+            setAnswers((oldArray: any) => [...oldArray, newAnswer]);
+        }
     };
 
     useEffect(() => {
-        handleLoading(false);
-    }, [data]);
-    return data ? (
+        const fetchData = async () => {
+            try {
+                const allQuestions = await fetchAllQuestions();
+                setCollection(allQuestions);
+                console.log(allQuestions);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (collection != null) {
+            let data = collection[scenario];
+            setQuestionData(data);
+            console.log("mewing", questionData);
+        }
+    }, [scenario, collection]);
+    useEffect(() => {
+        console.log(answers);
+    }, [answers]);
+
+    return questionData ? (
         <motion.div
             initial={{ y: 0, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="flex flex-col h-full min-h-screen"
         >
-            <TopLayout
-                data={data}
-                session_id={session_id}
-                loading={loading}
-                setLoading={handleLoading}
-            />
+            <TopLayout data={questionData} scenario={scenario} />
 
             <div className="h-full flex-1 flex flex-col">
-                <RPGLayout
-                    data={data}
-                    session_id={session_id}
-                    loading={loading}
-                    setLoading={handleLoading}
-                />
+                <RPGLayout data={questionData} scenario={scenario} />
                 {!loading ? (
                     <div className="flex-1 flex flex-col items-center h-full">
                         <QuestionLayout
-                            data={data}
-                            session_id={session_id}
-                            loading={loading}
-                            setLoading={handleLoading}
+                            data={questionData}
+                            scenario={scenario}
                         />
                         <ChoicesLayout
-                            data={data}
-                            session_id={session_id}
-                            loading={loading}
-                            setLoading={handleLoading}
+                            handleAnswers={handleAnswers}
+                            handleScenario={handleScenario}
+                            scenario={scenario}
+                            data={questionData}
                         />
                     </div>
                 ) : (
                     <motion.div
                         initial={{ y: 0, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ ease: cubicBezier(0.25, 0.1, 0.25, 1), delay: 0.5 }}
+                        transition={{
+                            ease: cubicBezier(0.25, 0.1, 0.25, 1),
+                        }}
                         role="status"
                         className="m-auto"
                     >

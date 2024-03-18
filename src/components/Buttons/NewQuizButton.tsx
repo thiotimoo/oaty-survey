@@ -9,8 +9,7 @@ const NewQuizButton = ({ loading, setLoading }: any) => {
     const router = useRouter();
     const onNewQuiz = async () => {
         setLoading(true);
-        const session_id = await createSession();
-        router.push(`${process.env.NEXT_PUBLIC_BASE_URL}/quiz/${session_id}`);
+        router.push(`/quiz`);
     };
     return (
         <button
