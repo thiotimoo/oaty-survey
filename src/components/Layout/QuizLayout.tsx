@@ -17,6 +17,13 @@ const QuizLayout = () => {
     const [collection, setCollection]: any = useState();
     const [questionData, setQuestionData]: any = useState();
     const [answers, setAnswers]: any = useState([]);
+    const isBrowser = () => typeof window !== "undefined";
+    
+    function scrollToTop() {
+        if (!isBrowser()) return;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     const handleLoading = (newState: any) => {
         setLoading(newState);
     };
@@ -24,9 +31,11 @@ const QuizLayout = () => {
     const handleUser = (newUser: any) => {
         setUser(newUser);
     };
+    
 
     const handleScenario = async (newScenario: any) => {
         setScenario(newScenario);
+        scrollToTop();
     };
 
     const handleAnswers = async (newAnswer: any, newScenario: string) => {
@@ -74,7 +83,7 @@ const QuizLayout = () => {
             <motion.div
                 initial={{ y: 0, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                className="flex flex-col h-full min-h-screen"
+                className="flex flex-col h-full min-h-svh"
             >
                 <TopLayout data={questionData} scenario={scenario} />
 
@@ -126,7 +135,7 @@ const QuizLayout = () => {
             </motion.div>
         )
     ) : (
-        <FormLayout handleUser={handleUser}/>
+        <FormLayout handleUser={handleUser} />
     );
 };
 

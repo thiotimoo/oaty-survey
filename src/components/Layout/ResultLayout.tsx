@@ -16,7 +16,7 @@ const ResultLayout = async ({ result_id }: any) => {
     const result = data.result
     console.log(result)
     return result ? (
-        <div className="flex flex-col justify-center items-center min-h-screen">
+        <div className="flex flex-col justify-center items-center min-h-svh">
             <div className="flex-grow p-6">
                 <div className="flex-grow bg-yellow-100 outline outline-black border-inherit rounded-2xl w-auto h-full flex items-center justify-center relative max-w-screen-sm">
                     <Image
