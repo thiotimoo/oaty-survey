@@ -14,7 +14,8 @@ const MarqueeSpan = ({ children }: any) => {
 const MarqueeDivider = () => {
     return (
         <span className="text-base mx-4 text-zinc-600 selection:bg-white selection:text-black">
-            //
+            {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
+            <>{'//'}</>
         </span>
     );
 };
