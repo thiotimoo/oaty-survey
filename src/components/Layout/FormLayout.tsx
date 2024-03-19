@@ -144,7 +144,7 @@ const SecondPage = ({ page, handlePage, handleUsername, username }: any) => {
             button="Lanjut"
             top={
                 <Image
-                    className="rounded-xl md:w-64 md:h-64 w-32 h-32 aspect-square object-contain -translate-x-10"
+                    className="rounded-xl md:w-64 md:h-64 w-32 h-32 aspect-square object-contain "
                     src={"/assets/cat_boing.gif"}
                     alt="Cat Calm"
                     width={200}
