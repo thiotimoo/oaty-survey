@@ -27,7 +27,9 @@ body {
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C6B8DD", endColorstr="#D6D6D6", GradientType=1 );
     //background-image: url('/assets/grid_pattern.svg');
 }
-
+.font-space {
+    font-family: var(--font-space);
+}
 .grain {
     position: fixed;
     top: 0;

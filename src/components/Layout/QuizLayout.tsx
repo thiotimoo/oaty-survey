@@ -1,5 +1,5 @@
 "use client";
-import { cubicBezier, delay, motion } from "framer-motion";
+import { AnimatePresence, cubicBezier, delay, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ChoicesLayout from "./ChoicesLayout";
 import QuestionLayout from "./QuestionLayout";
@@ -18,7 +18,7 @@ const QuizLayout = () => {
     const [questionData, setQuestionData]: any = useState();
     const [answers, setAnswers]: any = useState([]);
     const isBrowser = () => typeof window !== "undefined";
-    
+
     function scrollToTop() {
         if (!isBrowser()) return;
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -31,7 +31,6 @@ const QuizLayout = () => {
     const handleUser = (newUser: any) => {
         setUser(newUser);
     };
-    
 
     const handleScenario = async (newScenario: any) => {
         setScenario(newScenario);
@@ -79,10 +78,18 @@ const QuizLayout = () => {
     }, [answers]);
 
     return user ? (
-        questionData && (
+        <AnimatePresence mode="wait">
+            questionData && (
             <motion.div
-                initial={{ y: 0, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                initial="hidden"
+                animate="enter"
+                exit="exit"
+                variants={{
+                    hidden: { opacity: 0, x: -200 },
+                    enter: { opacity: 1, x: 0 },
+                    exit: { opacity: 0, x: 0 },
+                }}
+                transition={{ type: "spring", stiffness: 100 }}
                 className="flex flex-col h-full min-h-svh"
             >
                 <TopLayout data={questionData} scenario={scenario} />
@@ -90,7 +97,19 @@ const QuizLayout = () => {
                 <div className="h-full flex-1 flex flex-col">
                     <RPGLayout data={questionData} user={user} />
                     {!loading ? (
-                        <div className="flex-1 flex flex-col items-center h-full">
+                        <motion.div
+                            key={scenario}
+                            initial="hidden"
+                            animate="enter"
+                            exit="exit"
+                            variants={{
+                                hidden: { opacity: 0, x: -200 },
+                                enter: { opacity: 1, x: 0 },
+                                exit: { opacity: 0, x: 0 },
+                            }}
+                            transition={{ type: "spring", stiffness: 100 }}
+                            className="flex-1 flex flex-col items-center h-full"
+                        >
                             <QuestionLayout
                                 data={questionData}
                                 scenario={scenario}
@@ -101,7 +120,7 @@ const QuizLayout = () => {
                                 scenario={scenario}
                                 data={questionData}
                             />
-                        </div>
+                        </motion.div>
                     ) : (
                         <motion.div
                             initial={{ y: 0, opacity: 0 }}
@@ -133,7 +152,8 @@ const QuizLayout = () => {
                     )}
                 </div>
             </motion.div>
-        )
+            )
+        </AnimatePresence>
     ) : (
         <FormLayout handleUser={handleUser} />
     );

@@ -1,6 +1,5 @@
 "use client";
-
-import { answerQuestion } from "@/lib/client-quiz";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -24,29 +23,31 @@ const ChoiceButton = ({
     let bgButton = "";
     switch (index) {
         case 0:
-            bgButton = "bg-red-400 hover:bg-red-200 active:bg-red-50 border-black";
+            bgButton = "bg-red-900";
             break;
         case 1:
-            bgButton = "bg-blue-400 hover:bg-blue-200 active:bg-blue-50 border-black";
+            bgButton = "bg-blue-900";
             break;
         case 2:
-            bgButton = "bg-green-400 hover:bg-green-200 active:bg-green-50 border-black";
+            bgButton = "bg-green-900";
             break;
         case 3:
-            bgButton = "bg-yellow-400 hover:bg-yellow-200 active:bg-yellow-50 border-black";
+            bgButton = "bg-yellow-400";
             break;
     }
 
     return (
-        <button
+        <motion.button
             key={index}
-            className={`flex-1 w-full ${bgButton} p-4 rounded-2xl text-lg font-semibold disabled:opacity-20 transition-all border-2 border-b-4 disabled:border-b-2 font-mono`}
+            whileTap={{ scale: 0.9 }}
+            
+            className={`flex flex-row justify-center items-center text-center text-xl gap-2 bg-black text-white ps-8 pe-6 py-4 rounded-full w-full ${bgButton}`}
             onClick={() => onAnswer(index)}
         >
             <h2>{choice.body}</h2>
             {/* <h2>{choice.points}</h2> */}
             {/* <h2>{choice.next}</h2> */}
-        </button>
+        </motion.button>
     );
 };
 

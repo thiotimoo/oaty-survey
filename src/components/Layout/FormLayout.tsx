@@ -1,6 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
-import { CaretRight } from "@phosphor-icons/react/dist/ssr";
+import { CaretRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import React, { Children, useEffect, useState } from "react";
 import TypewriterComponent from "typewriter-effect";
 import Image from "next/image";
@@ -178,22 +178,19 @@ const SelectionItem = ({
     children,
 }: any) => {
     const isSelected = selectedValue == value;
-    let selectedStyle = "bg-white border-4 border-white";
+    let selectedStyle = "text-black";
     if (isSelected) {
-        selectedStyle = "bg-pink-400 border-4 border-black";
+        selectedStyle = "bg-white text-black shadow-lg";
     }
     return (
         <motion.button
             onClick={() => {
                 handleChange(value);
             }}
-            whileHover={{
-                scale: 1.2,
-                transition: { duration: 1 },
-            }}
             whileTap={{ scale: 0.9 }}
-            className={`flex flex-col justify-center items-center text-center text-xl gap-2 text-black rounded-lg ${selectedStyle}`}
+            className={`flex flex-col justify-center items-center text-center text-xl gap-2 text-black rounded-lg  ${selectedStyle} relative`}
         >
+            {isSelected && <CheckCircle className="absolute top-0 right-0 m-2 text-green-600" size="24" weight="fill"/>}
             {children}
         </motion.button>
     );
@@ -228,7 +225,7 @@ const ThirdPage = ({ page, handlePage, handleGender }: any) => {
                         width={200}
                         height={200}
                     />
-                    <span className="font-bold">Laki-laki</span>
+                    <span className="font-bold p-2">Laki-laki</span>
                 </SelectionItem>
                 <SelectionItem
                     value={1}
@@ -242,7 +239,7 @@ const ThirdPage = ({ page, handlePage, handleGender }: any) => {
                         width={200}
                         height={200}
                     />
-                    <span className="font-bold">Perempuan</span>
+                    <span className="font-bold p-2">Perempuan</span>
                 </SelectionItem>
             </div>
         </TemplateDialog>
@@ -296,7 +293,7 @@ const TemplateDialog = ({
             >
                 {top}
                 <div
-                    className={`${style_bold} lg:text-3xl text-2xl text-center`}
+                    className={`${style_bold} lg:text-3xl text-2xl text-center px-8`}
                 >
                     <TypewriterComponent
                         options={{
