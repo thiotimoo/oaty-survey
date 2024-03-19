@@ -5,7 +5,6 @@ import React from "react";
 const ExitQuizButton = ({ loading, setLoading }: any) => {
     const router = useRouter();
     const onExitQuiz = async () => {
-        setLoading(true);
         router.replace(`${process.env.NEXT_PUBLIC_BASE_URL}`);
     };
     return (

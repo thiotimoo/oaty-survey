@@ -1,25 +1,29 @@
 "use client";
+import { motion } from "framer-motion";
 import { createSession } from "@/lib/client-quiz";
 import { Play } from "@phosphor-icons/react";
-import { PlayCircle } from "@phosphor-icons/react/dist/ssr";
+import { CaretRight, PlayCircle } from "@phosphor-icons/react/dist/ssr";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const NewQuizButton = ({ loading, setLoading }: any) => {
+const NewQuizButton = () => {
     const router = useRouter();
     const onNewQuiz = async () => {
-        setLoading(true);
         router.push(`/quiz`);
     };
     return (
-        <button
-            disabled={loading}
-            className="flex flex-row gap-4 justify-center items-center bg-red-400 hover:bg-red-200 active:bg-red-50 border-black py-2 px-4 text-4xl tracking-widest uppercase rounded-2xl font-semibold disabled:opacity-20 transition-all border-2 border-b-4 font-mono w-full max-w-screen-md"
+        <motion.button
+            whileHover={{
+                scale: 1.2,
+                transition: { duration: 1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="flex flex-row justify-center items-center text-center text-xl gap-2 bg-black text-white ps-8 pe-6 py-4 rounded-full"
             onClick={onNewQuiz}
         >
-            <Play weight="fill" />
-            Play
-        </button>
+            Start
+            <CaretRight size={24} weight="fill" />
+        </motion.button>
     );
 };
 

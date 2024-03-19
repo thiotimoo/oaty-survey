@@ -2,7 +2,7 @@
 import React from "react";
 import { cubicBezier, motion } from "framer-motion";
 
-const QuestionLayout = ({ data, session_id, loading, setLoading }: any) => {
+const QuestionLayout = ({ data }: any) => {
     return (
         <motion.div
         initial={{ opacity: 0, y: -90 }}

@@ -88,7 +88,7 @@ const QuizLayout = () => {
                 <TopLayout data={questionData} scenario={scenario} />
 
                 <div className="h-full flex-1 flex flex-col">
-                    <RPGLayout data={questionData} scenario={scenario} />
+                    <RPGLayout data={questionData} user={user} />
                     {!loading ? (
                         <div className="flex-1 flex flex-col items-center h-full">
                             <QuestionLayout
