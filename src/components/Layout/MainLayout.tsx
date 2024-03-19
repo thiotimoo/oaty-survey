@@ -32,9 +32,7 @@ const MainLayout = () => {
                     />
                 </div>
 
-                <div
-                    className="bg-white text-black w-full shadow-lg py-2 md:rounded-md rounded-none"
-                >
+                <div className="bg-white text-black w-full shadow-lg py-2 md:rounded-md rounded-none">
                     <div className="relative overflow-x-hidden font-space uppercase w-full flex">
                         <div className="animate-marquee whitespace-nowrap">
                             <MarqueeSpan>Tika 🍊</MarqueeSpan>
@@ -81,9 +79,9 @@ const MainLayout = () => {
                                 className="rounded-lg shadow-lg aspect-square object-cover object-top md:w-64 md:h-64 w-32 h-32 block md:hidden"
                             />
                             <p className="md:text-xl text-lg leading-relaxed ">
-                                "Jika kamu menghabiskan terlalu banyak waktu
-                                untuk memikirkan sesuatu, kamu tidak akan pernah
-                                menyelesaikannya."
+                                &quot;Jika kamu menghabiskan terlalu banyak
+                                waktu untuk memikirkan sesuatu, kamu tidak akan
+                                pernah menyelesaikannya.&quot;
                                 <span className="font-bold md:hidden inline-block">
                                     - Bruce Lee
                                 </span>
