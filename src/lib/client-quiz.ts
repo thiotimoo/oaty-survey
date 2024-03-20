@@ -22,6 +22,14 @@ export function answerQuestion(scenario: string, choice: number, handleAnswers: 
     // return await res.json();
 }
 
+export function formatQuestion(question:string, gender: number) {
+    const myGender = gender == 0 ? "laki-laki":"perempuan"
+    const invertGender = gender == 0 ? "perempuan":"laki-laki"
+    question = question.replaceAll('${invertGender}', invertGender)
+    question = question.replaceAll('${myGender}', myGender)
+    return question
+}
+
 export async function createSession() {
     let session_id = -1;
 

@@ -22,7 +22,7 @@ const MarqueeDivider = () => {
 const MainLayout = () => {
     return (
         <main className="min-h-svh md:p-6 w-full">
-            <div className="h-full w-full flex flex-col items-center justify-center max-w-screen-md m-auto gap-4 py-8 overflow-x-hidden">
+            <div className="h-full w-full flex flex-col items-center justify-center max-w-screen-sm m-auto gap-4 py-8 overflow-x-hidden">
                 <div>
                     <Image
                         alt="OATY"

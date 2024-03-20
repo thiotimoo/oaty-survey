@@ -41,7 +41,7 @@ const ChoiceButton = ({
             key={index}
             whileTap={{ scale: 0.9 }}
             
-            className={`flex flex-row justify-center items-center text-center text-xl gap-2 bg-black text-white ps-8 pe-6 py-4 rounded-full w-full ${bgButton}`}
+            className={`flex flex-row justify-center items-center text-center text-lg gap-2 bg-white hover:bg-black hover:text-white text-black ps-8 pe-6 py-4 rounded-2xl w-full ${bgButton}`}
             onClick={() => onAnswer(index)}
         >
             <h2>{choice.body}</h2>

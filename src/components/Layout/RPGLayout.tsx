@@ -3,23 +3,18 @@ import React from "react";
 
 const RPGLayout = ({ data, user }: any) => {
     return (
-        <div className="flex items-center justify-center px-4 w-full h-40">
-            <div className="bg-yellow-100 outline outline-black border-inherit rounded-2xl w-full h-full flex items-center justify-center relative overflow-clip max-w-screen-md ">
-                <Image
-                    src="/assets/bg1.jpg"
-                    alt="Portrait"
-                    className="h-full w-full absolute object-cover rounded-2xl"
-                    width={400}
-                    height={200}
-                />
-                <Image
-                    src={user?.gender == 0 ? "/assets/omori-transparent.gif" : "/assets/female-transparent.webp"}
-                    alt="Portrait"
-                    className="h-full w-auto z-10"
-                    width={400}
-                    height={400}
-                />
-            </div>
+        <div className="w-full flex-1 max-w-screen-sm flex flex-col items-center justify-end flex-shrink px-4 py-2">
+            <Image
+                src={
+                    user?.gender == 0
+                        ? "/assets/omori-transparent.gif"
+                        : "/assets/female-transparent.webp"
+                }
+                alt="Portrait"
+                className="aspect-square lg:h-64 md:h-52 h-48 w-auto object-contain"
+                width={400}
+                height={400}
+            />
         </div>
     );
 };

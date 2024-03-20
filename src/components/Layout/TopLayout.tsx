@@ -8,13 +8,15 @@ const TopLayout = ({ data, scenario, loading, setLoading }: any) => {
         (Number.parseInt(questionNum) / 22) * 100
     );
     return (
-        <div className="flex flex-col w-full p-2">
-            <div className="w-full rounded-full bg-zinc-400 h-2 flex items-start justify-start">
+        <div className="flex flex-col w-full px-4 pt-2 max-w-screen-sm m-auto">
+            <div className="w-full rounded-full bg-zinc-400 h-2 flex items-start justify-start ">
                 <div
                     className={`rounded-full bg-zinc-900 h-2 transition-all`}
                     style={{ width: completionPercent + "%" }}
                 />
             </div>
+            {/* 
+            
             <div className="flex flex-row w-full items-center justify-between">
                 <div className="flex-1 flex items-center justify-start">
                     <ExitQuizButton loading={loading} setLoading={setLoading} />
@@ -31,7 +33,7 @@ const TopLayout = ({ data, scenario, loading, setLoading }: any) => {
                         # {scenario}
                     </p>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

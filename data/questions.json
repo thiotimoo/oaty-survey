@@ -135,7 +135,7 @@
         ]
     },
     "8A": {
-        "question": "Bel istirahat ke 2 pun berbunyi, saat kamu pergi ke kantin kamu tidak sengaja menjatuhkan kopi ke jaket perempuan/pria yang kamu tidak kenal, dan perempuan/pria tersebut memarahi mu",
+        "question": "Bel istirahat ke 2 pun berbunyi, saat kamu pergi ke kantin kamu tidak sengaja menjatuhkan kopi ke jaket ${invertGender} yang kamu tidak kenal, dan ${invertGender} tersebut memarahi mu",
         "choices": [
             {
                 "body": "Diam dan pergi meninggalkannya (Next 9A)",
@@ -155,7 +155,7 @@
         ]
     },
     "9A": {
-        "question": "Saat dikantin kamu bertemu dengan perempuan/pria itu lagi",
+        "question": "Saat dikantin kamu bertemu dengan ${invertGender} itu lagi",
         "choices": [
             {
                 "body": "Abaikan dan lanjut mengobrol dengan teman-teman (Next 11A)",
@@ -163,14 +163,14 @@
                 "nextQuestion": "11A"
             },
             {
-                "body": "Kamu berinisiatif minta maaf dan menawari untuk membersihkan jaketnya perempuan/pria tersebut memaafkan mu (Next 10A)",
+                "body": "Kamu berinisiatif minta maaf dan menawari untuk membersihkan jaketnya ${invertGender} tersebut memaafkan mu (Next 10A)",
                 "points": 1,
                 "nextQuestion": "10A"
             }
         ]
     },
     "10A": {
-        "question": "Perempuan/Pria tersebut menerima tawaran dari kamu dan memaafkan mu",
+        "question": "${invertGender} tersebut menerima tawaran dari kamu dan memaafkan mu",
         "choices": [
             {
                 "body": "Next",

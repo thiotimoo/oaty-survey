@@ -46,7 +46,7 @@ const FormLayout = ({ handleUser }: any) => {
                 exit="exit"
                 variants={variants}
                 transition={{ type: "spring", stiffness: 100 }}
-                className="container min-h-svh mx-auto flex flex-col items-center justify-center max-w-screen-lg overflow-x-hidden"
+                className="container min-h-svh mx-auto flex flex-col items-center justify-center max-w-screen-sm overflow-x-hidden"
             >
                 <FormNavigator
                     page={page}

@@ -17,7 +17,7 @@ const ChoicesLayout = ({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -90 }}
             transition={{ ease: cubicBezier(0.25, 0.1, 0.25, 1) }}
-            className={`flex ${flexOrientation} max-w-screen-md w-full gap-4 p-4 bg-white rounded-t-2xl`}
+            className={`flex ${flexOrientation} max-w-screen-sm w-full gap-4 p-4`}
         >
             {data?.choices?.map((choice: any, index: number) => {
                 return (

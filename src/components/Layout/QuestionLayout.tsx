@@ -2,8 +2,9 @@
 import React from "react";
 import { cubicBezier, motion } from "framer-motion";
 import TypewriterComponent from "typewriter-effect";
+import { formatQuestion } from "@/lib/client-quiz";
 
-const QuestionLayout = ({ data }: any) => {
+const QuestionLayout = ({ data, user, countAnswer }: any) => {
     const handleFinished = () => {};
     return (
         <motion.div
@@ -11,9 +12,10 @@ const QuestionLayout = ({ data }: any) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -90 }}
             transition={{ ease: cubicBezier(0.25, 0.1, 0.25, 1) }}
-            className="w-full flex items-center justify-center flex-1 max-w-screen-md"
+            className="w-full flex items-start justify-start h-48 max-w-screen-sm flex-grow  text-white px-4 py-2"
         >
-            <div className="font-bold text-2xl text-center p-6">
+            <div className="font-bold text-xl text-left px-5 py-3 bg-black w-full m-2 rounded-md">
+                <p className="text-base text-neutral-500">Question {countAnswer}</p>
                 <TypewriterComponent
                     options={{
                         delay: 20,
@@ -21,7 +23,7 @@ const QuestionLayout = ({ data }: any) => {
                     }}
                     onInit={(typewriter) => {
                         typewriter
-                            .typeString(data.question)
+                            .typeString(formatQuestion(data.question, user.gender))
                             .callFunction(handleFinished)
                             .start();
                     }}
