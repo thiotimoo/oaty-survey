@@ -9,7 +9,9 @@ const FormLayout = ({ handleUser }: any) => {
     const [user, setUser]: any = useState();
     const [username, setUsername] = useState("");
     const [gender, setGender] = useState(0);
+    const [classroom, setClassroom] = useState("");
     const [page, setPage] = useState(1);
+    const [school, setSchool] = useState("YOS SUDARSO KARAWANG");
     const handlePage = (page: number) => {
         setPage(page);
     };
@@ -22,19 +24,27 @@ const FormLayout = ({ handleUser }: any) => {
         setGender(value);
     };
 
+    const handleClassroom = (value: any) => {
+        setClassroom(value);
+    };
+
+    const handleSchool = (value: any) => {
+        setSchool(value);
+    };
+
     useEffect(() => {
         setUser({
             username: username,
             gender: gender,
             age: 0,
-            school: "",
-            class: "",
+            school: school,
+            class: classroom,
         });
-    }, [username, gender]);
+    }, [username, gender, school, classroom]);
     const variants = {
-        hidden: { opacity: 0, x: -200 },
+        hidden: { opacity: 0, x: 0 },
         enter: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: 0 },
+        exit: { opacity: 0, x: -200 },
     };
 
     return (
@@ -53,6 +63,8 @@ const FormLayout = ({ handleUser }: any) => {
                     handlePage={handlePage}
                     handleUsername={handleUsername}
                     handleGender={handleGender}
+                    handleSchool={handleSchool}
+                    handleClassroom={handleClassroom}
                     handleUser={handleUser}
                     user={user}
                     username={username}
@@ -68,6 +80,8 @@ const FormNavigator = ({
     handleUsername,
     handleGender,
     handleUser,
+    handleSchool,
+    handleClassroom,
     user,
     username,
 }: any) => {
@@ -92,6 +106,22 @@ const FormNavigator = ({
                 />
             );
         case 4:
+            return (
+                <SchoolPage
+                    page={page}
+                    handlePage={handlePage}
+                    handleSchool={handleSchool}
+                />
+            );
+        case 5:
+            return (
+                <ClassPage
+                    page={page}
+                    handlePage={handlePage}
+                    handleClassroom={handleClassroom}
+                />
+            );
+        case 6:
             return (
                 <FinishPage
                     page={page}
@@ -156,9 +186,9 @@ const SecondPage = ({ page, handlePage, handleUsername, username }: any) => {
             <motion.input
                 whileTap={{ scale: 0.9 }}
                 className="bg-white px-4 py-2 rounded-lg text-lg w-full shadow-lg"
-                onKeyDown={(event)=> {
-                    if(event.key === 'Enter') {
-                        handleNext()      
+                onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                        handleNext();
                     }
                 }}
                 onChange={handleUsername}
@@ -188,10 +218,73 @@ const SelectionItem = ({
                 handleChange(value);
             }}
             whileTap={{ scale: 0.9 }}
-            className={`flex flex-col justify-center items-center text-center text-xl gap-2 text-black rounded-lg  ${selectedStyle} relative`}
+            className={`flex flex-col justify-center items-center text-center text-xl gap-2 text-black rounded-lg  ${selectedStyle} relative w-full`}
         >
-            {isSelected && <CheckCircle className="absolute top-0 right-0 m-2 text-green-600" size="24" weight="fill"/>}
+            {isSelected && (
+                <CheckCircle
+                    className="absolute top-0 right-0 m-2 text-green-600"
+                    size="24"
+                    weight="fill"
+                />
+            )}
             {children}
+        </motion.button>
+    );
+};
+
+const SelectionSchool = ({
+    selectedValue,
+    value,
+    handleChange,
+    children,
+}: any) => {
+    const isSelected = selectedValue == value;
+    let selectedStyle = "text-black";
+    let selectedVisibility = "opacity-0";
+    if (isSelected) {
+        selectedStyle = "bg-white text-black shadow-lg";
+        selectedVisibility = "opacity-100";
+    }
+    return (
+        <motion.button
+            onClick={() => {
+                handleChange(value);
+            }}
+            whileTap={{ scale: 0.9 }}
+            className={`flex flex-row justify-between items-center text-left text-xl text-black rounded-lg  ${selectedStyle} relative w-full flex-1`}
+        >
+            {children}
+            <CheckCircle
+                className={"m-4 text-green-600 " + selectedVisibility}
+                size="24"
+                weight="fill"
+            />
+        </motion.button>
+    );
+};
+
+const SelectionClass = ({ selectedValue, value, handleChange }: any) => {
+    const isSelected = selectedValue == value;
+    let selectedStyle = "text-black";
+    let selectedVisibility = "opacity-0";
+    if (isSelected) {
+        selectedStyle = "bg-white text-black shadow-lg";
+        selectedVisibility = "opacity-100";
+    }
+    return (
+        <motion.button
+            onClick={() => {
+                handleChange(value);
+            }}
+            whileTap={{ scale: 0.9 }}
+            className={`flex flex-row justify-between items-center text-xl text-black rounded-lg  ${selectedStyle} relative w-full flex-1`}
+        >
+            <span className="ps-4 text-center font-bold">{value}</span>
+            <CheckCircle
+                className={"m-4 text-green-600 " + selectedVisibility}
+                size="24"
+                weight="fill"
+            />
         </motion.button>
     );
 };
@@ -202,7 +295,7 @@ const ThirdPage = ({ page, handlePage, handleGender }: any) => {
         setGender(value);
     };
     const handleNext = () => {
-        handleGender(gender)
+        handleGender(gender);
         handlePage(4);
     };
     return (
@@ -241,6 +334,188 @@ const ThirdPage = ({ page, handlePage, handleGender }: any) => {
                     />
                     <span className="font-bold p-2">Perempuan</span>
                 </SelectionItem>
+            </div>
+        </TemplateDialog>
+    );
+};
+
+const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
+    const [school, setSchool] = useState("YOS SUDARSO KARAWANG");
+    const [error, setError] = useState("");
+    const [customSchool, setCustomSchool] = useState("");
+    const handleChangeSchool = (value: any) => {
+        setSchool(value);
+    };
+    const handleCustomSchool = (e: any) => {
+        const value = e.target.value;
+        if (
+            value.toUpperCase() == "YOS SUDARSO KARAWANG" ||
+            value.toUpperCase() == "TUNAS DHARMA KARAWANG"
+        ) {
+            handleChangeSchool(value.toUpperCase());
+            setCustomSchool("");
+        } else {
+            handleChangeSchool(value.toUpperCase());
+            setCustomSchool(value.toUpperCase());
+        }
+    };
+    const handleNext = () => {
+        if (school.trim() == "") {
+            setError("Nama sekolah boleh kosong!");
+        } else {
+            setError("");
+            handleSchool(school);
+            handlePage(5);
+        }
+    };
+    return (
+        <TemplateDialog
+            bold
+            text="Dimana kamu bersekolah?"
+            button="Lanjut"
+            callback={handleNext}
+            error={error}
+        >
+            <div className="w-full flex flex-col justify-center items-center p-2 gap-2">
+                <SelectionSchool
+                    value="YOS SUDARSO KARAWANG"
+                    selectedValue={school}
+                    handleChange={handleChangeSchool}
+                >
+                    <Image
+                        alt="Yos Sudarso Karawang"
+                        className="w-16 h-16 p-2"
+                        src="/assets/school-yos.png"
+                        width={200}
+                        height={200}
+                    />
+                    <span className="font-bold p-2">YOS SUDARSO KARAWANG</span>
+                </SelectionSchool>
+                <SelectionSchool
+                    value="TUNAS DHARMA KARAWANG"
+                    selectedValue={school}
+                    handleChange={handleChangeSchool}
+                >
+                    <Image
+                        alt="Tunas Dharma Karawang"
+                        className="w-16 h-16 p-2"
+                        src="/assets/school-td.png"
+                        width={200}
+                        height={200}
+                    />
+                    <span className="font-bold p-2">TUNAS DHARMA KARAWANG</span>
+                </SelectionSchool>
+                <SelectionSchool
+                    value={customSchool}
+                    selectedValue={school}
+                    handleChange={handleChangeSchool}
+                >
+                    <div className="flex flex-col">
+                        <input
+                            className=" bg-transparent w-full h-full placeholder-zinc-800 font-bold p-6"
+                            placeholder="Sekolah lain..."
+                            value={customSchool}
+                            onChange={handleCustomSchool}
+                        />
+                    </div>
+                </SelectionSchool>
+            </div>
+        </TemplateDialog>
+    );
+};
+
+const ClassPage = ({ page, handlePage, handleClassroom }: any) => {
+    const [classroom, setClassroom] = useState("");
+    const [error, setError] = useState("");
+    const handleChangeClassroom = (value: any) => {
+        setClassroom(value);
+    };
+    const handleNext = () => {
+        if (classroom .trim() == "") {
+            setError("Kelas tidak boleh kosong!");
+        } else {
+            setError("");
+            handleClassroom(classroom);
+            handlePage(6);
+        }
+    };
+    return (
+        <TemplateDialog
+            bold
+            text="Pilih kelasmu."
+            button="Lanjut"
+            error={error}
+            callback={handleNext}
+        >
+            <div className="w-full flex flex-col justify-center items-center p-2">
+                <div className="flex flex-row">
+                    <SelectionClass
+                        value="10.1"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                    <SelectionClass
+                        value="10.2"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                    <SelectionClass
+                        value="10.3"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                    <SelectionClass
+                        value="10.4"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                </div>
+                <div className="flex flex-row">
+                    <SelectionClass
+                        value="11.1"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                    <SelectionClass
+                        value="11.2"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                    <SelectionClass
+                        value="11.3"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                    <SelectionClass
+                        value="11.4"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                </div>
+                <div className="flex flex-row">
+                    <SelectionClass
+                        value="12 IPA 1"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                    <SelectionClass
+                        value="12 IPA 2"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                </div>
+                <div className="flex flex-row">
+                    <SelectionClass
+                        value="12 IPS 1"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                    <SelectionClass
+                        value="12 IPS 2"
+                        selectedValue={classroom}
+                        handleChange={handleChangeClassroom}
+                    />
+                </div>
             </div>
         </TemplateDialog>
     );
@@ -292,9 +567,7 @@ const TemplateDialog = ({
                 className={`flex flex-col justify-center flex-1 items-center gap-4 max-w-screen-sm`}
             >
                 {top}
-                <div
-                    className={`${style_bold} lg:text-3xl text-2xl text-center px-8`}
-                >
+                <div className={`${style_bold} text-xl text-center px-8`}>
                     <TypewriterComponent
                         options={{
                             delay: 20,
@@ -322,7 +595,7 @@ const TemplateDialog = ({
                                 transition: { duration: 1 },
                             }}
                             whileTap={{ scale: 0.9 }}
-                            className="flex flex-row justify-center items-center text-center text-xl gap-2 bg-black text-white ps-8 pe-6 py-4 rounded-full"
+                            className="flex flex-row justify-center items-center text-center text-lg gap-2 bg-black text-white ps-8 pe-6 py-4 rounded-full"
                             onClick={callback}
                         >
                             {button}

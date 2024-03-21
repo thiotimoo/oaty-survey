@@ -9,7 +9,7 @@ const ExitQuizButton = ({ loading, setLoading }: any) => {
     };
     return (
         <button
-            className="p-2 mx-2 hover:bg-black active:bg-zinc-400 group rounded-full transition-all"
+            className="p-2 mx-2 hover:bg-black active:bg-zinc-400 group rounded-full transition-all text-lg"
             onClick={onExitQuiz}
         >
             <X weight="bold" size={24} className="group-hover:fill-white" />
