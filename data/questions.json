@@ -178,7 +178,7 @@
         "question": "Perempuan/Pria tersebut menerima tawaran dari kamu dan memaafkan mu.",
         "choices": [
             {
-                "body": "",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "11A"
             }
@@ -323,7 +323,7 @@
         "question": "Orang tua kamu memahami alasan kamu dan kamu pun pergi pulang kerumah.",
         "choices": [
             {
-                "body": "",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "19A"
             }
@@ -368,7 +368,7 @@
         "question": "Saat tiba dirumah kamu menjelaskan kepada orang tua, orang tua kamu pun memahaminya dan kamu pergi membersihkan badan.",
         "choices": [
             {
-                "body": "",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "19A"
             }
