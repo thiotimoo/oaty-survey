@@ -5,7 +5,7 @@ import ExitQuizButton from "../Buttons/ExitQuizButton";
 const TopLayout = ({ data, scenario, loading, setLoading }: any) => {
     const questionNum = scenario.replace(/\D/g, "");
     const completionPercent = Math.floor(
-        (Number.parseInt(questionNum) / 22) * 100
+        (Number.parseInt(questionNum) / 43) * 100
     );
     return (
         <div className="flex flex-col w-full px-4 pt-2 max-w-screen-sm m-auto">
@@ -15,25 +15,6 @@ const TopLayout = ({ data, scenario, loading, setLoading }: any) => {
                     style={{ width: completionPercent + "%" }}
                 />
             </div>
-            {/* 
-            
-            <div className="flex flex-row w-full items-center justify-between">
-                <div className="flex-1 flex items-center justify-start">
-                    <ExitQuizButton loading={loading} setLoading={setLoading} />
-                </div>
-                <Image
-                    src="/assets/icon_light.png"
-                    className="h-16 w-auto"
-                    alt="OATY"
-                    width={200}
-                    height={200}
-                />
-                <div className="flex-1 flex items-center justify-end">
-                    <p className="px-6 py-2 font-bold font-mono mx-2 text-sm tracking-widest text-center font-space">
-                        # {scenario}
-                    </p>
-                </div>
-            </div> */}
         </div>
     );
 };

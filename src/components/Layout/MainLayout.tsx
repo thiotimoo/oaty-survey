@@ -4,22 +4,7 @@ import React, { useEffect, useState } from "react";
 import NewQuizButton from "../Buttons/NewQuizButton";
 import Image from "next/image";
 import LoadingLayout from "./LoadingLayout";
-const MarqueeSpan = ({ children }: any) => {
-    return (
-        <span className="text-base mx-4 selection:bg-black selection:text-white font-bold">
-            {children}
-        </span>
-    );
-};
 
-const MarqueeDivider = () => {
-    return (
-        <span className="text-base mx-4 text-zinc-600 selection:bg-white selection:text-black">
-            {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
-            <>{"//"}</>
-        </span>
-    );
-};
 const MainLayout = () => {
     const [loading, setLoading] = useState();
     const handleLoading = (newState: any) => {
@@ -47,11 +32,11 @@ const MainLayout = () => {
                                 <Image
                                     alt="OATY"
                                     src={"/assets/icon_light.png"}
-                                    className="h-48 w-full object-contain p-2"
+                                    className="h-48 w-auto object-contain p-2  aspect-square m-auto rounded-xl"
                                     width={500}
                                     height={500}
                                 />
-                                <h2 className="text-center text-lg font-bold max-w-screen-sm">Overthinking Assessment<br/>for Teens Yosuka</h2>
+                                <h2 className="text-center text-lg max-w-screen-sm p-4 font-gabarito font-black">Overthinking Assessment<br/>for Teens Yosuka</h2>
                             </div>
                             <NewQuizButton
                                 loading={loading}

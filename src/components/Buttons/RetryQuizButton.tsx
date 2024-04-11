@@ -8,7 +8,7 @@ const RetryQuizButton = ({loading, handleLoading }: any) => {
     const router = useRouter()
     const handleRetry = async (e: any) => {
         handleLoading(true);
-        router.replace('/quiz')
+        router.push('/quiz')
     };
     return (
         <div>

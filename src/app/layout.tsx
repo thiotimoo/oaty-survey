@@ -3,7 +3,7 @@ import { Gabarito, Space_Mono } from "next/font/google";
 import "./globals.css";
 import PageTransitionEffect from "@/components/Layout/PageTransitionEffect";
 
-const gabarito = Gabarito({ subsets: ["latin"], display: "swap" });
+const gabarito = Gabarito({ subsets: ["latin"] });
 const spaceMono = Space_Mono({
     subsets: ["latin"],
     variable: "--font-space",

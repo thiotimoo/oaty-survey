@@ -380,7 +380,7 @@
             {
                 "body": "Kamu ga peduli dengan ulangan karena kamu sudah cape dan pergi tidur (Ending 1)",
                 "points": -1,
-                "nextQuestion": "END1"
+                "nextQuestion": "22A"
             }
         ]
     },
@@ -395,7 +395,7 @@
             {
                 "body": "Pasrah lalu pergi tidur dan berdoa untuk nilai yang bagus buat besok (Ending 2)",
                 "points": 0,
-                "nextQuestion": "END2"
+                "nextQuestion": "22A"
             }
         ]
     },
@@ -410,7 +410,7 @@
             {
                 "body": "Pasrah lalu pergi tidur dan berdoa untuk nilai yang bagus buat besok (Ending 2)",
                 "points": 0,
-                "nextQuestion": "END2"
+                "nextQuestion": "22A"
             }
         ]
     },
@@ -420,12 +420,392 @@
             {
                 "body": "Gabisa tidur karena kepikiran nilai ulangan besok (Ending 3)",
                 "points": 1,
-                "nextQuestion": "END3"
+                "nextQuestion": "22A"
             },
             {
                 "body": "Pasrah dan berdoa agar ulangan besok bagus nilainya (Ending 2)",
                 "points": 0,
-                "nextQuestion": "END2"
+                "nextQuestion": "22A"
+            }
+        ]
+    },
+    "22A": {
+        "question": "Beberapa hari lagi liburan kenaikan kelas tiba, teman-teman mu sudah mulai membicarakan tempat liburan saat libur kenaikan kelas, lalu teman-teman mu bertanya ke kamu 'Lu mau jalan-jalan kemana?",
+        "choices": [
+            {
+                "body": "Dirumah aja gw",
+                "points": 0,
+                "nextQuestion": "23A"
+            },
+            {
+                "body": "Belum tau sih mau kemana",
+                "points": 0,
+                "nextQuestion": "23A"
+            }
+        ]
+    },
+    "23A": {
+        "question": "Liburan pun tiba, kamu hanya dirumah sendirian dan merasa sangat bosan",
+        "choices": [
+            {
+                "body": "Mengajak orang tua kamu pergi jalan-jalan",
+                "points": 0,
+                "nextQuestion": "24A"
+            },
+            {
+                "body": "Mencari kegiatan baru",
+                "points": 0,
+                "nextQuestion": "25A"
+            }
+        ]
+    },
+    "24A": {
+        "question": "Orang tua kamu sedang tidak bisa pergi karena masih sangat sibuk",
+        "choices": [
+            {
+                "body": "'Ok' lalu mencari kegiatan baru",
+                "points": -1,
+                "nextQuestion": "25A"
+            },
+            {
+                "body": "Sedih, lalu berpikir enak banget ya mereka liburan nanti kalau gw ditanya kemana gw jawab apa",
+                "points": 1,
+                "nextQuestion": "25B"
+            },
+            {
+                "body": "'Ok' Lanjut nonton drakor/Anime/Hollywood",
+                "points": 0,
+                "nextQuestion": "25B"
+            }
+        ]
+    },
+    "25A": {
+        "question": "Kamu memutuskan untuk olahraga, tapi saat olahraga kamu memecahkan gelas milik ibu mu",
+        "choices": [
+            {
+                "body": "Langsung mengakui kepada ibumu",
+                "points": 0,
+                "nextQuestion": "26A"
+            },
+            {
+                "body": "Menyembunyikan dari ibu, dan langsung memesan yang baru di online agar tidak diketahui ibu mu",
+                "points": 1,
+                "nextQuestion": "27A"
+            }
+        ]
+    },
+    "26A": {
+        "question": "Ibu tidak marah, hanya menyuruh mu berhati-hati",
+        "choices": [
+            {
+                "body": "Next to 27A",
+                "points": 0,
+                "nextQuestion": "27A"
+            }
+        ]
+    },
+    "27A": {
+        "question": "Saat makan bersama ibumu menanyakan tentang universitas yang akan kamu pilih, tetapi kamu belum mencarinya",
+        "choices": [
+            {
+                "body": "Belum dicari",
+                "points": 0,
+                "nextQuestion": "28A"
+            },
+            {
+                "body": "Nanti aja carinya",
+                "points": 0,
+                "nextQuestion": "28A"
+            }
+        ]
+    },
+    "28A": {
+        "question": "'Cari dulu dong, udah kelas 12 masa belum tau masuk univ mana'",
+        "choices": [
+            {
+                "body": "Iyaaa",
+                "points": 0,
+                "nextQuestion": "29A"
+            }
+        ]
+    },
+    "29A": {
+        "question": "Saat sedang tiduran kamu memikirkan sesuatu",
+        "choices": [
+            {
+                "body": "Mikirin mau masuk univ apa",
+                "points": 1,
+                "nextQuestion": "30A"
+            },
+            {
+                "body": "Mau ngapain ya, bosen bgt",
+                "points": 0,
+                "nextQuestion": "30B"
+            }
+        ]
+    },
+    "30A": {
+        "question": "Kamu meminta saran dari teman mu, tetapi beberapa dari teman mu bilang 'Nilai lu kan biasa-biasa aja, yakin masuk univ?",
+        "choices": [
+            {
+                "body": "Halahh berisik lu, lu juga biasa aja nilainya (bercanda²)",
+                "points": -1,
+                "nextQuestion": "31A"
+            },
+            {
+                "body": "Berisik lu (Kesel)",
+                "points": 0,
+                "nextQuestion": "31A"
+            },
+            {
+                "body": "Yaudah sih (Sedih)",
+                "points": 1,
+                "nextQuestion": "31A"
+            }
+        ]
+    },
+    "30B": {
+        "question": "Akhirnya kamu mencari univ dan Kamu meminta saran dari teman mu, tetapi beberapa dari teman mu bilang 'Nilai lu kan biasa-biasa aja, yakin masuk univ?",
+        "choices": [
+            {
+                "body": "Halahh berisik lu, lu juga biasa aja nilainya (bercanda²)",
+                "points": -1,
+                "nextQuestion": "31A"
+            },
+            {
+                "body": "Berisik lu (Kesel)",
+                "points": 0,
+                "nextQuestion": "31A"
+            },
+            {
+                "body": "Yaudah sih (Sedih)",
+                "points": 1,
+                "nextQuestion": "31A"
+            }
+        ]
+    },
+    "31A": {
+        "question": "Akhirnya kamu menemukan kampus yang mempunyai jurusan impian mu, tetapi kampus tersebjt merupakan salah satu kampus favorit",
+        "choices": [
+            {
+                "body": "Cari yang lain aja deh, kayanya gabakal keterima",
+                "points": 0,
+                "nextQuestion": "32A"
+            },
+            {
+                "body": "Gas, bisa nih",
+                "points": -1,
+                "nextQuestion": "32B"
+            },
+            {
+                "body": "Ah gabakal keterima ini mah, dimana lgi ya 😞😞",
+                "points": 1,
+                "nextQuestion": "32A"
+            }
+        ]
+    },
+    "32A": {
+        "question": "Kamu menemukan yang sesuai dengan nilai kamu dan ada jurusan impian mu, lalu kamu segara memberi tau odang tua mu tetapi ibu mu mau kamu di salah satu univ favorit",
+        "choices": [
+            {
+                "body": "'Kayanya susah deh kalau disitu'",
+                "points": 0,
+                "nextQuestion": "33A"
+            },
+            {
+                "body": "'Gabisa, kata temen aku nilai aku gacukup 😞'",
+                "points": 1,
+                "nextQuestion": "33C"
+            }
+        ]
+    },
+    "32B": {
+        "question": "kamu segara memberi tau orang tua mu tetapi ayah mu menanyai 'Nilai kamu cukup ga?'",
+        "choices": [
+            {
+                "body": "Bisa-bisa aja sih",
+                "points": -1,
+                "nextQuestion": "33B"
+            },
+            {
+                "body": "Belum cukup sih kata temen ku",
+                "points": 1,
+                "nextQuestion": "33C"
+            }
+        ]
+    },
+    "33A": {
+        "question": "Yaudahh kalau gabisa gapapaa",
+        "choices": [
+            {
+                "body": "Next to 34A",
+                "points": 0,
+                "nextQuestion": "34A"
+            }
+        ]
+    },
+    "33B": {
+        "question": "Yaudahh kalau bisa lanjutkann",
+        "choices": [
+            {
+                "body": "Next to 34A",
+                "points": 0,
+                "nextQuestion": "34A"
+            }
+        ]
+    },
+    "33C": {
+        "question": "Kok kata temen? Percaya diri sendiri dongg",
+        "choices": [
+            {
+                "body": "Next to 34A",
+                "points": 0,
+                "nextQuestion": "34A"
+            }
+        ]
+    },
+    "34A": {
+        "question": "Saat kamu sedang menonton film, ayah mu datang ke kamar dan bilang 'Kapan kamu belajar? Bentar lagi masuk univ harus tes dulu kan?'",
+        "choices": [
+            {
+                "body": "Iya nantii (Lanjut nonton)",
+                "points": -1,
+                "nextQuestion": "35A"
+            },
+            {
+                "body": "Iyaa ini belajar (Stop nonton)",
+                "points": 0,
+                "nextQuestion": "36A"
+            }
+        ]
+    },
+    "35A": {
+        "question": "Melanjutkan nonton",
+        "choices": [
+            {
+                "body": "Ga tenang karena omongan ayah",
+                "points": 1,
+                "nextQuestion": "36A"
+            },
+            {
+                "body": "Lanjut nonton dengan tenang",
+                "points": -1,
+                "nextQuestion": "37A"
+            }
+        ]
+    },
+    "36A": {
+        "question": "Pergi belajar, tetapi kamu tidak bisa fokus",
+        "choices": [
+            {
+                "body": "Udh lah nanti aja belajarnya liburan ini",
+                "points": -1,
+                "nextQuestion": "37A"
+            },
+            {
+                "body": "Gw harus belajar, gw harus buktiin ke temen-temen dan ortu gw",
+                "points": 1,
+                "nextQuestion": "37A"
+            },
+            {
+                "body": "Belajar dikit aja lah",
+                "points": 0,
+                "nextQuestion": "37A"
+            }
+        ]
+    },
+    "37A": {
+        "question": "Kamu sedang melihat story teman-teman mu di instagram, kamu berpikir",
+        "choices": [
+            {
+                "body": "Enak bgt jadi mereka bisa jalan-jalan",
+                "points": 0,
+                "nextQuestion": "38A"
+            },
+            {
+                "body": "Gapeduli lagi karena sebentar lagi masuk sekolah",
+                "points": -1,
+                "nextQuestion": "38A"
+            },
+            {
+                "body": "Nanti pas masuk sekolah pasti mereka cerita pas mereka jalan-jalan",
+                "points": 1,
+                "nextQuestion": "38A"
+            }
+        ]
+    },
+    "38A": {
+        "question": "Besok sudah kembali ke sekolah, apa reaksi mu?",
+        "choices": [
+            {
+                "body": "Akhirnya gw ada aktivitas",
+                "points": 0,
+                "nextQuestion": "39A"
+            },
+            {
+                "body": "Duh besok udh sekolah aja, ntar kalau mereka cerita liburan gw cerita apa ya",
+                "points": 1,
+                "nextQuestion": "39A"
+            }
+        ]
+    },
+    "39A": {
+        "question": "Disekolah semua teman-teman mu cerita tentang liburan mereka, lalu mereka menanyai aktivitas kamu selama liburan",
+        "choices": [
+            {
+                "body": "Dengan pede bilang 'Belajar dong, buat tes univ'",
+                "points": -1,
+                "nextQuestion": "40A"
+            },
+            {
+                "body": "Ga ngapa-ngapain sih...😞 (Takut bilang sebenernya karena takut di ejek)",
+                "points": 1,
+                "nextQuestion": "41A"
+            }
+        ]
+    },
+    "40A": {
+        "question": "'Yaelah ngapain belajar dah, lu kan gamungkin masukk wkwkwk, bercandaa'",
+        "choices": [
+            {
+                "body": "Menaggap itu sebuah candaan",
+                "points": 0,
+                "nextQuestion": "41A"
+            },
+            {
+                "body": "Sedih karena + jadi ga pede😞",
+                "points": 1,
+                "nextQuestion": "41A"
+            }
+        ]
+    },
+    "41A": {
+        "question": "Tes untuk masuk universitas pun dibuka, kamu mengikutinya tetapi gagal apa reaksi mu?",
+        "choices": [
+            {
+                "body": "Biasa aja karena udh ada rencana cadangan dan langsung coba tes di univ lain",
+                "points": 0,
+                "nextQuestion": "42A"
+            },
+            {
+                "body": "Sedih, tapi langsung coba tes di univ lain",
+                "points": 0,
+                "nextQuestion": "42A"
+            },
+            {
+                "body": "Kecewa karena gabisa banggain ortu",
+                "points": 1,
+                "nextQuestion": "42A"
+            }
+        ]
+    },
+    "42A": {
+        "question": "Di tes univ yang lain ternyata kamu berhasil 🥳",
+        "choices": [
+            {
+                "body": "Selesai",
+                "points": 0,
+                "nextQuestion": "END1"
             }
         ]
     }

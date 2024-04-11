@@ -66,6 +66,7 @@ const FormLayout = ({ handleUser }: any) => {
                     handleSchool={handleSchool}
                     handleClassroom={handleClassroom}
                     handleUser={handleUser}
+                    school={school}
                     user={user}
                     username={username}
                 />
@@ -82,6 +83,7 @@ const FormNavigator = ({
     handleUser,
     handleSchool,
     handleClassroom,
+    school,
     user,
     username,
 }: any) => {
@@ -117,6 +119,7 @@ const FormNavigator = ({
             return (
                 <ClassPage
                     page={page}
+                    school={school}
                     handlePage={handlePage}
                     handleClassroom={handleClassroom}
                 />
@@ -266,9 +269,10 @@ const SelectionSchool = ({
 const SelectionClass = ({ selectedValue, value, handleChange }: any) => {
     const isSelected = selectedValue == value;
     let selectedStyle = "text-black";
-    let selectedVisibility = "opacity-0";
+    let selectedVisibility = "opacity-0 border-black  bg-opacity-10";
     if (isSelected) {
-        selectedStyle = "bg-white text-black shadow-lg";
+        selectedStyle =
+            "bg-white text-black shadow-lg border-transparent bg-opacity-100";
         selectedVisibility = "opacity-100";
     }
     return (
@@ -277,7 +281,7 @@ const SelectionClass = ({ selectedValue, value, handleChange }: any) => {
                 handleChange(value);
             }}
             whileTap={{ scale: 0.9 }}
-            className={`flex flex-row justify-between items-center text-xl text-black rounded-lg  ${selectedStyle} relative w-full flex-1`}
+            className={`flex flex-row justify-between items-center text-xl text-black rounded-lg border-2 border-dashed ${selectedStyle} relative w-full flex-1`}
         >
             <span className="ps-4 text-center font-bold">{value}</span>
             <CheckCircle
@@ -391,7 +395,7 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
                     />
                     <span className="font-bold p-2">YOS SUDARSO KARAWANG</span>
                 </SelectionSchool>
-                <SelectionSchool
+                {/* <SelectionSchool
                     value="TUNAS DHARMA KARAWANG"
                     selectedValue={school}
                     handleChange={handleChangeSchool}
@@ -404,7 +408,7 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
                         height={200}
                     />
                     <span className="font-bold p-2">TUNAS DHARMA KARAWANG</span>
-                </SelectionSchool>
+                </SelectionSchool> */}
                 <SelectionSchool
                     value={customSchool}
                     selectedValue={school}
@@ -424,20 +428,182 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
     );
 };
 
-const ClassPage = ({ page, handlePage, handleClassroom }: any) => {
+const ClassPage = ({ page, handlePage, handleClassroom, school }: any) => {
     const [classroom, setClassroom] = useState("");
     const [error, setError] = useState("");
     const handleChangeClassroom = (value: any) => {
         setClassroom(value);
     };
     const handleNext = () => {
-        if (classroom .trim() == "") {
+        if (classroom.trim() == "") {
             setError("Kelas tidak boleh kosong!");
         } else {
             setError("");
             handleClassroom(classroom);
             handlePage(6);
         }
+    };
+    const handleYosClass = () => {
+        return (
+            <div className="w-full flex flex-col justify-center items-center p-2 gap-2">
+                
+                <div className="flex flex-col gap-2 w-full">
+                    <span className="text-base font-bold text-start w-full">
+                        SMA
+                    </span>
+                    <div className="grid-cols-2 grid w-full bg-red-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="10.1"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="10.2"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="10.3"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="10.4"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                    <div className="grid grid-cols-2 w-full bg-blue-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="11.1"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="11.2"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="11.3"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="11.4"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                    <div className="grid grid-cols-2 w-full bg-green-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="12.A1"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="12.A2"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="12.S1"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                        <SelectionClass
+                            value="12.S2"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                </div>
+                <div className="flex flex-col gap-2 w-full">
+                    <span className="text-base font-bold text-start w-full">
+                        SMP
+                    </span>
+                    <div className="w-full bg-purple-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="7"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                    <div className="w-full bg-orange-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="8"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                    <div className="w-full bg-indigo-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="9"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                </div>
+            </div>
+        );
+    };
+    const handleAllClass = () => {
+        return (
+            <div className="w-full flex flex-col justify-center items-center p-2 gap-2">
+                <div className="flex flex-col gap-2 w-full">
+                    <span className="text-base font-bold text-start w-full">
+                        SMP
+                    </span>
+                    <div className="w-full bg-purple-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="7"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                    <div className="w-full bg-orange-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="8"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                    <div className="w-full bg-indigo-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="9"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                </div>
+                <div className="flex flex-col gap-2 w-full">
+                    <span className="text-base font-bold text-start w-full">
+                        SMA
+                    </span>
+                    <div className="w-full bg-red-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="10"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                    <div className="w-full bg-blue-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="11"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                    <div className="w-full bg-green-300 gap-2 p-2 rounded-xl">
+                        <SelectionClass
+                            value="12"
+                            selectedValue={classroom}
+                            handleChange={handleChangeClassroom}
+                        />
+                    </div>
+                </div>
+            </div>
+        );
     };
     return (
         <TemplateDialog
@@ -447,76 +613,9 @@ const ClassPage = ({ page, handlePage, handleClassroom }: any) => {
             error={error}
             callback={handleNext}
         >
-            <div className="w-full flex flex-col justify-center items-center p-2">
-                <div className="flex flex-row">
-                    <SelectionClass
-                        value="10.1"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                    <SelectionClass
-                        value="10.2"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                    <SelectionClass
-                        value="10.3"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                    <SelectionClass
-                        value="10.4"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                </div>
-                <div className="flex flex-row">
-                    <SelectionClass
-                        value="11.1"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                    <SelectionClass
-                        value="11.2"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                    <SelectionClass
-                        value="11.3"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                    <SelectionClass
-                        value="11.4"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                </div>
-                <div className="flex flex-row">
-                    <SelectionClass
-                        value="12 IPA 1"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                    <SelectionClass
-                        value="12 IPA 2"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                </div>
-                <div className="flex flex-row">
-                    <SelectionClass
-                        value="12 IPS 1"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                    <SelectionClass
-                        value="12 IPS 2"
-                        selectedValue={classroom}
-                        handleChange={handleChangeClassroom}
-                    />
-                </div>
-            </div>
+            {school === "YOS SUDARSO KARAWANG"
+                ? handleYosClass()
+                : handleAllClass()}
         </TemplateDialog>
     );
 };
@@ -564,7 +663,7 @@ const TemplateDialog = ({
     return (
         <AnimatePresence>
             <div
-                className={`flex flex-col justify-center flex-1 items-center gap-4 max-w-screen-sm`}
+                className={`flex flex-col justify-center flex-1 items-center gap-4 max-w-screen-sm py-6`}
             >
                 {top}
                 <div className={`${style_bold} text-xl text-center px-8`}>
@@ -595,7 +694,7 @@ const TemplateDialog = ({
                                 transition: { duration: 1 },
                             }}
                             whileTap={{ scale: 0.9 }}
-                            className="flex flex-row justify-center items-center text-center text-lg gap-2 bg-black text-white ps-8 pe-6 py-4 rounded-full"
+                            className="flex flex-row justify-center items-center text-center text-lg gap-2 bg-primary  text-black font-bold ps-8 pe-6 py-4 rounded-full"
                             onClick={callback}
                         >
                             {button}

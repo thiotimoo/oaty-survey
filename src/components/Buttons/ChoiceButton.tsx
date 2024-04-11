@@ -11,14 +11,8 @@ const ChoiceButton = ({
     handleAnswers,
     handleScenario
 }: any) => {
-    const router = useRouter();
     const onAnswer = async (choice: number) => {
         handleAnswers({scenario: scenario, choice: choice},data.choices[choice].nextQuestion);
-        /*if (res) {
-            router.refresh();
-            
-            //setLoading(false);
-        }*/
     };
     let bgButton = "";
     switch (index) {
@@ -40,13 +34,10 @@ const ChoiceButton = ({
         <motion.button
             key={index}
             whileTap={{ scale: 0.9 }}
-            
             className={`flex flex-row justify-center items-center text-center text-lg gap-2  hover:bg-black hover:text-white text-white ps-8 pe-6 py-4 rounded-2xl w-full ${bgButton}`}
             onClick={() => onAnswer(index)}
         >
             <h2>{choice.body}</h2>
-            {/* <h2>{choice.points}</h2> */}
-            {/* <h2>{choice.next}</h2> */}
         </motion.button>
     );
 };

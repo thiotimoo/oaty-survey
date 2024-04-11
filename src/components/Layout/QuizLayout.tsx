@@ -5,11 +5,11 @@ import ChoicesLayout from "./ChoicesLayout";
 import QuestionLayout from "./QuestionLayout";
 import TopLayout from "./TopLayout";
 import RPGLayout from "./RPGLayout";
-import { fetchAllQuestions, submitQuiz } from "@/lib/client-quiz";
 import { useRouter } from "next/navigation";
 import FormLayout from "./FormLayout";
 import Image from "next/image";
 import LoadingLayout from "./LoadingLayout";
+import {  quizFetchQuestions, quizClientSubmit } from "@/lib/client-quiz";
 
 const QuizLayout = () => {
     const router = useRouter();
@@ -44,7 +44,7 @@ const QuizLayout = () => {
     const handleAnswers = async (newAnswer: any, newScenario: string) => {
         if (newScenario.startsWith("END")) {
             handleLoading(true);
-            const quiz = await submitQuiz(user, answers);
+            const quiz = await quizClientSubmit(user, answers);
             if (quiz.statusCode == 200) {
                 router.replace(`/result/${quiz.data._id}`);
             } else {
@@ -60,7 +60,7 @@ const QuizLayout = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const allQuestions = await fetchAllQuestions();
+                const allQuestions = await quizFetchQuestions();
                 setCollection(allQuestions);
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -73,13 +73,12 @@ const QuizLayout = () => {
         if (collection != null) {
             let data = collection[scenario];
             setQuestionData(data);
-            console.log("mewing", questionData);
         }
     }, [scenario, collection]);
-    useEffect(() => {
-        console.log(answers);
-    }, [answers]);
-
+    const questionNum = scenario.replace(/\D/g, "");
+    const questionHue = Math.floor(
+        (Number.parseInt(questionNum) / 43) * 100);
+    const _hue_filter = "hue-rotate-["+questionHue.toString() + "deg]"
     return user ? (
         questionData && collection && (
             <AnimatePresence mode="wait">
@@ -120,7 +119,7 @@ const QuizLayout = () => {
                                             width={900}
                                             height={900}
                                             alt="Background"
-                                            className="w-full h-full -z-10 object-cover max-w-screen-sm rounded-xl object-bottom"
+                                            className={`w-full h-full -z-10 object-cover max-w-screen-sm rounded-xl object-bottom filter ${_hue_filter}`}
                                         />
                                     </div>
                                     <QuestionLayout

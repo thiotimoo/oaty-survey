@@ -8,6 +8,9 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            colors: {
+                primary: "#db867c",
+            },
             animation: {
                 marquee: "marquee 10s linear infinite",
                 marquee2: "marquee2 10s linear infinite",

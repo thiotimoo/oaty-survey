@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { createSession } from "@/lib/client-quiz";
 import { Play } from "@phosphor-icons/react";
 import { CaretRight, PlayCircle } from "@phosphor-icons/react/dist/ssr";
 import { useRouter } from "next/navigation";
@@ -20,7 +19,7 @@ const NewQuizButton = ({ loading,handleLoading }: any) => {
                 transition: { duration: 1 },
             }}
             whileTap={{ scale: 0.9 }}
-            className="flex flex-row justify-center items-center text-center text-lg gap-2 bg-black text-white ps-8 pe-6 py-4 rounded-full"
+            className="flex flex-row justify-center items-center text-center text-lg gap-2 bg-primary font-bold text-black ps-8 pe-6 py-4 rounded-full"
             onClick={onNewQuiz}
         >
             Start

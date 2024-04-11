@@ -7,7 +7,7 @@ const LoadingLayout = () => {
             initial={{ y: 0, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 0, opacity: 0 }}
-            role="status"
+            role="status" 
             className="m-auto"
         >
             <svg

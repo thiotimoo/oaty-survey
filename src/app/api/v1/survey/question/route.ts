@@ -10,9 +10,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
 export async function GET(req: NextRequest, res: NextResponse) {
     await connectDatabase();
-
     const { searchParams } = new URL(req.url);
-    //const id = searchParams.get("id") || "1A";
     const sessionId = searchParams.get("id") || "";
 
     try {

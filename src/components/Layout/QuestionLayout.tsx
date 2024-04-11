@@ -2,7 +2,7 @@
 import React from "react";
 import { cubicBezier, motion } from "framer-motion";
 import TypewriterComponent from "typewriter-effect";
-import { formatQuestion } from "@/lib/client-quiz";
+import { quizFormatQuestion } from "@/lib/client-quiz";
 
 const QuestionLayout = ({ data, user, countAnswer }: any) => {
     const handleFinished = () => {};
@@ -23,7 +23,7 @@ const QuestionLayout = ({ data, user, countAnswer }: any) => {
                     }}
                     onInit={(typewriter) => {
                         typewriter
-                            .typeString(formatQuestion(data.question, user.gender))
+                            .typeString(quizFormatQuestion(data.question, user.gender))
                             .callFunction(handleFinished)
                             .start();
                     }}
