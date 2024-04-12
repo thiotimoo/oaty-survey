@@ -20,7 +20,7 @@ export function quizGenerateCharacter(points: number) {
         character="pito"
     }else if(points <= 2 && points >= -10) {
         character="wila"
-    }else if(points <= -11 && points >= -22) {
+    }else{
         character="tika"
     }
     return `/data/assets/result_${character}.jpg`
@@ -30,7 +30,7 @@ export async function quizGenerateImage(result: any) {
     const ctx = canvas.getContext("2d");
 
     const image = await loadImage(
-        path.join(process.cwd(), quizGenerateCharacter(result.points))
+        path.join(process.cwd(), quizGenerateCharacter(result.points).toString())
     );
     ctx.drawImage(image, 0, 0, 1080, 1920);
 
