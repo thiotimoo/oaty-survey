@@ -647,7 +647,6 @@ const ClassPage = ({ page, handlePage, handleClassroom, school }: any) => {
 const FinishPage = ({ page, handlePage, user, handleUser }: any) => {
     const handleNext = () => {
         handleUser(user);
-        console.log(user);
     };
     return (
         <TemplateDialog

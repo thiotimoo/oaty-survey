@@ -23,7 +23,7 @@ export function quizGenerateCharacter(points: number) {
     }else{
         character="tika"
     }
-    return `result_${character}.jpg`
+    return `result-${character}.jpg`
 }
 export async function quizGenerateImage(result: any) {
     const canvas = createCanvas(1080, 1920);
