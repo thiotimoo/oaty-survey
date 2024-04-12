@@ -133,12 +133,14 @@ const FormNavigator = ({
                     handleUser={handleUser}
                 />
             );
+            case 7:
+            return <ConsentPage page={page} handlePage={handlePage} />;
     }
 };
 
 const FirstPage = ({ page, handlePage, user }: any) => {
     const handleNext = () => {
-        handlePage(2);
+        handlePage(7);
     };
     return (
         <TemplateDialog
@@ -151,6 +153,28 @@ const FirstPage = ({ page, handlePage, user }: any) => {
                     className="rounded-xl md:w-64 md:h-64 w-32 h-32 aspect-square object-cover"
                     src={"/assets/cat_greetings.gif"}
                     alt="Hello!"
+                    width={200}
+                    height={200}
+                />
+            }
+        ></TemplateDialog>
+    );
+};
+
+const ConsentPage = ({ page, handlePage, user }: any) => {
+    const handleNext = () => {
+        handlePage(2);
+    };
+    return (
+        <TemplateDialog
+            text="Oh ya, sekedar pemberitahuan. Kami akan menggunakan hasil survey kalian untuk proyek akhir Informatika kami, dan hasil kamu akan tetap dijaga kerahasiaannya. Apakah kamu tidak keberatan?"
+            button="Iya, bolehh. 👍"
+            callback={handleNext}
+            top={
+                <Image
+                    className="rounded-xl md:w-64 md:h-64 w-32 h-32 aspect-square object-cover"
+                    src={"/assets/nerd.png"}
+                    alt="Nerd Emoji"
                     width={200}
                     height={200}
                 />
