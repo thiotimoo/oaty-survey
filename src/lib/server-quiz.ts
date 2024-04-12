@@ -5,7 +5,7 @@ import { getAllQuestions } from "./questions";
 registerFont(path.join(process.cwd(), "/data/assets/fonts/Jua-Regular.ttf"), {
     family: "Jua",
 });
-export async function quizGenerateCharacter(points: number) {
+export function quizGenerateCharacter(points: number) {
 // 1. Bodoamatan (Tika): -22 hingga -11
 // 2. Waras (Wila) : -10 hingga 2
 // 3. Mikir (Pito) : 3 hingga 12
