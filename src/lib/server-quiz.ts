@@ -23,14 +23,14 @@ export function quizGenerateCharacter(points: number) {
     }else{
         character="tika"
     }
-    return `/data/assets/result_${character}.jpg`
+    return `result_${character}.jpg`
 }
 export async function quizGenerateImage(result: any) {
     const canvas = createCanvas(1080, 1920);
     const ctx = canvas.getContext("2d");
 
     const image = await loadImage(
-        path.join(process.cwd(), quizGenerateCharacter(result.points).toString())
+        path.join(process.cwd(), 'public', 'results', quizGenerateCharacter(result.points).toString())
     );
     ctx.drawImage(image, 0, 0, 1080, 1920);
 
