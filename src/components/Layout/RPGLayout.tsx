@@ -5,6 +5,7 @@ const RPGLayout = ({ data, user }: any) => {
     return (
         <div className="w-full flex-1 max-w-screen-sm flex flex-col items-center justify-end flex-shrink px-4 py-2">
             <Image
+                priority={true}
                 src={
                     user?.gender == 0
                         ? "/assets/omori-transparent.gif"

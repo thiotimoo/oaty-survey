@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import FormLayout from "./FormLayout";
 import Image from "next/image";
 import LoadingLayout from "./LoadingLayout";
-import {  quizFetchQuestions, quizClientSubmit } from "@/lib/client-quiz";
+import { quizFetchQuestions, quizClientSubmit } from "@/lib/client-quiz";
 
 const QuizLayout = () => {
     const router = useRouter();
@@ -37,15 +37,14 @@ const QuizLayout = () => {
 
     const handleScenario = async (newScenario: any) => {
         setScenario(newScenario);
-        console.log(newScenario)
+        console.log(newScenario);
         setCountAnswer((countAnswer) => countAnswer + 1);
         scrollToTop();
     };
 
     const handleAnswers = async (newAnswer: any, newScenario: string) => {
         if (newScenario.startsWith("END")) {
-            
-        handleLoading(true);
+            handleLoading(true);
             const quiz = await quizClientSubmit(user, answers);
             if (quiz.statusCode == 200) {
                 router.replace(`/result/${quiz.data._id}`);
@@ -78,9 +77,8 @@ const QuizLayout = () => {
         }
     }, [scenario, collection]);
     const questionNum = scenario.replace(/\D/g, "");
-    const questionHue = Math.floor(
-        (Number.parseInt(questionNum) / 43) * 100);
-    const _hue_filter = "hue-rotate-["+questionHue.toString() + "deg]"
+    const questionHue = Math.floor((Number.parseInt(questionNum) / 43) * 100);
+    const _hue_filter = "hue-rotate-[" + questionHue.toString() + "deg]";
     return user ? (
         questionData && collection && (
             <AnimatePresence mode="popLayout">
@@ -117,7 +115,10 @@ const QuizLayout = () => {
                                 <div className="-z-10 flex-1 w-full flex flex-col items-center relative">
                                     <div className="w-full h-full absolute -z-10 object-cover max-w-screen-sm rounded-xl px-4 py-2">
                                         <Image
-                                            src={`/backgrounds/${questionData.bg || "bg1"}.jpg`}
+                                            priority={true}
+                                            src={`/backgrounds/${
+                                                questionData.bg || "bg1"
+                                            }.jpg`}
                                             width={900}
                                             height={900}
                                             alt="Background"
