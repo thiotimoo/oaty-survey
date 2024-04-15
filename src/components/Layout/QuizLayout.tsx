@@ -115,11 +115,11 @@ const QuizLayout = () => {
                                 <div className="-z-10 flex-1 w-full flex flex-col items-center relative">
                                     <div className="w-full h-full absolute -z-10 object-cover max-w-screen-sm rounded-xl px-4 py-2">
                                         <Image
-                                            src={"/assets/bg1.jpg"}
+                                            src={`/backgrounds/${questionData.bg || "bg1"}.jpg`}
                                             width={900}
                                             height={900}
                                             alt="Background"
-                                            className={`w-full h-full -z-10 object-cover max-w-screen-sm rounded-xl object-bottom filter ${_hue_filter}`}
+                                            className={`w-full h-full -z-10 object-cover max-w-screen-sm rounded-xl object-bottom`}
                                         />
                                     </div>
                                     <QuestionLayout

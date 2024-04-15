@@ -6,7 +6,7 @@ let data: any;
 export async function getAllQuestions() {
     if (!file)
         file = await fs.readFile(
-            path.join(process.cwd(), "/data/questions.json"),
+            path.join(process.cwd(), "/public/data/questions.json"),
             "utf8"
         );
     if (!data && file) data = JSON.parse(file);

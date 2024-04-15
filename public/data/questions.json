@@ -36,6 +36,7 @@
     },
     "3A": {
         "question": "Kamu berhasil menyelesaikan tugas dan datang tepat waktu serta dapat mengumpulkan tugasnya.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Next",
@@ -46,6 +47,7 @@
     },
     "3B": {
         "question": "Kamu tiba di sekolah tepat waktu, saat pelajaran matematika guru menyuruh semua anak murid mengumpulkan tugas tersebut.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Kamu tetap santai dan jujur kepada gurunya",
@@ -61,6 +63,7 @@
     },
     "4A": {
         "question": "Guru mu mengetahui kamu berbohong dan kamu dihukum selama jam matematika.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Menerima hukuman tersebut dan merasa biasa saja karena ada teman mu yang terkena hukuman juga.",
@@ -76,6 +79,7 @@
     },
     "5A": {
         "question": "Bel istirahat pun berbunyi, lalu saat makan bersama teman-teman mu, teman mu membuat jokes dari kejadian saat kamu dihukum tadi.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Kamu tertawa bersama teman mu setelah itu kamu melupakan hal tersebut.",
@@ -91,6 +95,7 @@
     },
     "6A": {
         "question": "Istirahat pun selesai dan kalian melanjutkan pelajaran, saat pelajaran bahasa indonesia salah satu dari murid dimintai membuat puisi dan maju kedepan.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Diam dan menunggu orang lain maju karena kalian malas",
@@ -111,6 +116,7 @@
     },
     "7A": {
         "question": "Salah satu teman kamu maju dan mendapatkan nilai tambahan.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Harusnya gw maju aja tadi, puisinya juga mirip sama yang gw pikirin.",
@@ -126,6 +132,7 @@
     },
     "7B": {
         "question": "Kamu maju dan mendapatkan nilai tambahan, tetapi gurumu merasa kurang bagus dan mengoceh.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Duh kenapa kurang bagus ya.",
@@ -141,6 +148,7 @@
     },
     "8A": {
         "question": "Bel istirahat ke 2 pun berbunyi, saat kamu berlari ke kantin kamu tidak sengaja menjatuhkan kopi ke jaket perempuan/pria yang kamu tidak kenal, dan perempuan/pria tersebut memarahi mu.",
+        "bg": "bg3",
         "choices": [
             {
                 "body": "Diam dan pergi meninggalkannya.",
@@ -161,6 +169,7 @@
     },
     "9A": {
         "question": "Saat dikantin kamu melihat perempuan/pria itu lagi.",
+        "bg": "bg3",
         "choices": [
             {
                 "body": "Mengabaikannya dan lanjut mengobrol dengan teman-teman",
@@ -176,6 +185,7 @@
     },
     "10A": {
         "question": "Perempuan/Pria tersebut menerima tawaran dari kamu dan memaafkan mu.",
+        "bg": "bg3",
         "choices": [
             {
                 "body": "Next",
@@ -186,6 +196,7 @@
     },
     "11A": {
         "question": "Bel masuk pun berbunyi, di jam pelajaran terakhir kalian disuruh berkelompok dan mendiskusikan materi yang akan mau di presentasikan.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Kamu langsung ikut memberikan saran",
@@ -206,6 +217,7 @@
     },
     "12A": {
         "question": "Saran kamu ditolak oleh teman mu.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Kamu berdebat dengan serius",
@@ -226,6 +238,7 @@
     },
     "12B": {
         "question": "Teman mu meminta saran dari mu.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Tetap memendam ide karena takut dibilang 'ide yang aneh'",
@@ -241,6 +254,7 @@
     },
     "13A": {
         "question": "Teman-teman yang lain lebih memilih lawan debat mu.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Kamu kesal tetapi tetap mengikuti diskusi tersebut",
@@ -261,6 +275,7 @@
     },
     "13B": {
         "question": "Saran kamu ditolak oleh teman-teman mu.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Kamu tidak peduli dengan hal tersebut karena sudah mengetahui akan ditolak",
@@ -276,6 +291,7 @@
     },
     "14A": {
         "question": "Saat pulang sekolah teman mu mengajak mu bermain badminton.",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Kamu langsung mengiyakan ajakan teman mu tanpa izin ke orang tua",
@@ -291,6 +307,7 @@
     },
     "15A": {
         "question": "Kamu pergi bermain selama hingga lupa waktu, saat kamu melihat hp kamu sudah di telfon 11x dari orang tua kamu.",
+        "bg": "bg4",
         "choices": [
             {
                 "body": "Tetap santai dan menjelaskan secara perlahan",
@@ -306,6 +323,7 @@
     },
     "15B": {
         "question": "Kamu di ijinkan bermain, akhirnya kalian Kamu pergi bermain tetapi kamu lupa waktu, saat kamu melihat hp kamu di telfon 11x dari orang tua kamu.",
+        "bg": "bg4",
         "choices": [
             {
                 "body": "Tetap santai dan menjelaskan secara perlahan",
@@ -321,6 +339,7 @@
     },
     "16A": {
         "question": "Orang tua kamu memahami alasan kamu dan kamu pun pergi pulang kerumah.",
+        "bg": "bg4",
         "choices": [
             {
                 "body": "Next",
@@ -331,6 +350,7 @@
     },
     "16B": {
         "question": "Orang tua kamu tidak mengangkat telepon dari kamu.",
+        "bg": "bg4",
         "choices": [
             {
                 "body": "Kamu panik dan langsung pergi pulang",
@@ -346,6 +366,7 @@
     },
     "17A": {
         "question": "Saat kamu dijalan dan terjebak macet.",
+        "bg": "bg5",
         "choices": [
             {
                 "body": "Memikirkan alasan yang mau diberikan kepada orang tua mu",
@@ -366,6 +387,7 @@
     },
     "18A": {
         "question": "Saat tiba dirumah kamu menjelaskan kepada orang tua, orang tua kamu pun memahaminya dan kamu pergi membersihkan badan.",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Next",
@@ -376,6 +398,7 @@
     },
     "19A": {
         "question": "Kamu tidak tau mau berbuat apa, tiba-tiba seorang teman mu mengirimkan pesan 'Besok ulangan, lu udh belajar?'",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Kamu panik dan langsung pergi belajar",
@@ -395,7 +418,8 @@
         ]
     },
     "20A": {
-        "question": "Setelah belajar 2Jam kamu tetap tidak paham dengan materi tersebut.",
+        "question": "Setelah belajar 2 Jam kamu tetap tidak paham dengan materi tersebut.",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Panik dan tetap melanjutkan belajar hingga jam 12",
@@ -411,6 +435,7 @@
     },
     "20B": {
         "question": "Ternyata benar besok ada ulangan.",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Kamu panik dan gelisah dan langsung belajar",
@@ -426,6 +451,7 @@
     },
     "21A": {
         "question": "Sudah jam 12 malam tapi kamu belum hafal semua pelajarannya, dan akhirnya kamu mencoba tidur.",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Gabisa tidur karena kepikiran nilai ulangan besok",
@@ -441,6 +467,7 @@
     },
     "22A": {
         "question": "Beberapa hari lagi liburan kenaikan kelas tiba, teman-teman mu sudah mulai membicarakan tempat liburan saat libur kenaikan kelas, lalu teman-teman mu bertanya ke kamu 'Lu mau jalan-jalan kemana?",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Dirumah aja gw",
@@ -456,6 +483,7 @@
     },
     "23A": {
         "question": "Liburan pun tiba, kamu hanya dirumah sendirian dan merasa sangat bosan",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Mengajak orang tua kamu pergi jalan-jalan",
@@ -471,6 +499,7 @@
     },
     "24A": {
         "question": "Orang tua kamu sedang tidak bisa pergi karena masih sangat sibuk",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "'Ok' lalu mencari kegiatan baru",
@@ -491,6 +520,7 @@
     },
     "25A": {
         "question": "Kamu memutuskan untuk olahraga, tapi saat olahraga kamu memecahkan gelas milik ibu mu",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Langsung mengakui kepada ibumu",
@@ -506,6 +536,7 @@
     },
     "26A": {
         "question": "Ibu tidak marah, hanya menyuruh mu berhati-hati",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Next",
@@ -516,6 +547,7 @@
     },
     "27A": {
         "question": "Saat makan bersama ibumu menanyakan tentang universitas yang akan kamu pilih, tetapi kamu belum mencarinya",
+        "bg": "bg6",
         "choices": [
             {
                 "body": "Belum dicari",
@@ -531,6 +563,7 @@
     },
     "28A": {
         "question": "'Cari dulu dong, udah kelas 12 masa belum tau masuk univ mana'",
+        "bg": "bg6",
         "choices": [
             {
                 "body": "Iyaaa",
@@ -541,6 +574,7 @@
     },
     "29A": {
         "question": "Saat sedang tiduran kamu memikirkan sesuatu",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Mikirin mau masuk univ apa",
@@ -556,6 +590,7 @@
     },
     "30A": {
         "question": "Kamu meminta saran dari teman mu, tetapi beberapa dari teman mu bilang 'Nilai lu kan biasa-biasa aja, yakin masuk univ?",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Halahh berisik lu, lu juga biasa aja nilainya (bercanda²)",
@@ -576,6 +611,7 @@
     },
     "30B": {
         "question": "Akhirnya kamu mencari univ dan Kamu meminta saran dari teman mu, tetapi beberapa dari teman mu bilang 'Nilai lu kan biasa-biasa aja, yakin masuk univ?",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Halahh berisik lu, lu juga biasa aja nilainya (bercanda²)",
@@ -595,7 +631,8 @@
         ]
     },
     "31A": {
-        "question": "Akhirnya kamu menemukan kampus yang mempunyai jurusan impian mu, tetapi kampus tersebjt merupakan salah satu kampus favorit",
+        "question": "Akhirnya kamu menemukan kampus yang mempunyai jurusan impian mu, tetapi kampus tersebut merupakan salah satu kampus favorit",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Cari yang lain aja deh, kayanya gabakal keterima",
@@ -616,6 +653,7 @@
     },
     "32A": {
         "question": "Kamu menemukan yang sesuai dengan nilai kamu dan ada jurusan impian mu, lalu kamu segara memberi tau odang tua mu tetapi ibu mu mau kamu di salah satu univ favorit",
+        "bg": "bg6",
         "choices": [
             {
                 "body": "'Kayanya susah deh kalau disitu'",
@@ -631,6 +669,7 @@
     },
     "32B": {
         "question": "kamu segara memberi tau orang tua mu tetapi ayah mu menanyai 'Nilai kamu cukup ga?'",
+        "bg": "bg6",
         "choices": [
             {
                 "body": "Bisa-bisa aja sih",
@@ -646,6 +685,7 @@
     },
     "33A": {
         "question": "Yaudahh kalau gabisa gapapaa",
+        "bg": "bg6",
         "choices": [
             {
                 "body": "Next to 34A",
@@ -656,6 +696,7 @@
     },
     "33B": {
         "question": "Yaudahh kalau bisa lanjutkann",
+        "bg": "bg6",
         "choices": [
             {
                 "body": "Next to 34A",
@@ -666,6 +707,7 @@
     },
     "33C": {
         "question": "Kok kata temen? Percaya diri sendiri dongg",
+        "bg": "bg6",
         "choices": [
             {
                 "body": "Next to 34A",
@@ -676,6 +718,7 @@
     },
     "34A": {
         "question": "Saat kamu sedang menonton film, ayah mu datang ke kamar dan bilang 'Kapan kamu belajar? Bentar lagi masuk univ harus tes dulu kan?'",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Iya nantii (Lanjut nonton)",
@@ -691,6 +734,7 @@
     },
     "35A": {
         "question": "Melanjutkan nonton",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Ga tenang karena omongan ayah",
@@ -706,6 +750,7 @@
     },
     "36A": {
         "question": "Pergi belajar, tetapi kamu tidak bisa fokus",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Udh lah nanti aja belajarnya liburan ini",
@@ -726,6 +771,7 @@
     },
     "37A": {
         "question": "Kamu sedang melihat story teman-teman mu di instagram, kamu berpikir",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Enak bgt jadi mereka bisa jalan-jalan",
@@ -746,6 +792,7 @@
     },
     "38A": {
         "question": "Besok sudah kembali ke sekolah, apa reaksi mu?",
+        "bg": "bg1",
         "choices": [
             {
                 "body": "Akhirnya gw ada aktivitas",
@@ -761,6 +808,7 @@
     },
     "39A": {
         "question": "Disekolah semua teman-teman mu cerita tentang liburan mereka, lalu mereka menanyai aktivitas kamu selama liburan",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Dengan pede bilang 'Belajar dong, buat tes univ'",
@@ -776,6 +824,7 @@
     },
     "40A": {
         "question": "'Yaelah ngapain belajar dah, lu kan gamungkin masukk wkwkwk, bercandaa'",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Menaggap itu sebuah candaan",
@@ -791,6 +840,7 @@
     },
     "41A": {
         "question": "Tes untuk masuk universitas pun dibuka, kamu mengikutinya tetapi gagal apa reaksi mu?",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Biasa aja karena udh ada rencana cadangan dan langsung coba tes di univ lain",
@@ -811,6 +861,7 @@
     },
     "42A": {
         "question": "Di tes univ yang lain ternyata kamu berhasil 🥳",
+        "bg": "bg2",
         "choices": [
             {
                 "body": "Selesai",

@@ -2,7 +2,7 @@ import { createCanvas, loadImage, registerFont } from "canvas";
 import path from "path";
 import { getAllQuestions } from "./questions";
 
-registerFont(path.join(process.cwd(), "/data/assets/fonts/Jua-Regular.ttf"), {
+registerFont(path.join(process.cwd(), "/public/assets/fonts/Jua-Regular.ttf"), {
     family: "Jua",
 });
 export function quizGenerateCharacter(points: number) {
