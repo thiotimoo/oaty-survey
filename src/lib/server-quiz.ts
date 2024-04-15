@@ -12,7 +12,7 @@ export function quizGenerateCharacter(points: number) {
 // 4. Ovt (Rira): 13 hingga 22
 // 5. Sering ovt (Vina): 23 hingga 28
     let character;
-    if (points <= 28 && points >= 23) {
+    if (points >= 23) {
         character = "vina"
     }else if(points <= 22 && points >= 13) {
         character="rira"
