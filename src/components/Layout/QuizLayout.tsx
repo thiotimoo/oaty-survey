@@ -52,8 +52,10 @@ const QuizLayout = () => {
                 handleLoading(false);
             }
         } else {
-            handleScenario(newScenario);
-            setAnswers((oldArray: any) => [...oldArray, newAnswer]);
+            await handleLoading(true);
+            await handleScenario(newScenario);
+            await setAnswers((oldArray: any) => [...oldArray, newAnswer]);
+            await handleLoading(false);
         }
     };
 
