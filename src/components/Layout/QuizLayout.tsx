@@ -16,7 +16,7 @@ const QuizLayout = () => {
     const [loading, setLoading] = useState(false);
     const [scenario, setScenario] = useState("1A");
     const [countAnswer, setCountAnswer] = useState(1);
-    const [user, setUser] = useState();
+    const [user, setUser] = useState({name: "miau"});
     const [collection, setCollection]: any = useState();
     const [questionData, setQuestionData]: any = useState();
     const [answers, setAnswers]: any = useState([]);
@@ -37,13 +37,15 @@ const QuizLayout = () => {
 
     const handleScenario = async (newScenario: any) => {
         setScenario(newScenario);
+        console.log(newScenario)
         setCountAnswer((countAnswer) => countAnswer + 1);
         scrollToTop();
     };
 
     const handleAnswers = async (newAnswer: any, newScenario: string) => {
         if (newScenario.startsWith("END")) {
-            handleLoading(true);
+            
+        handleLoading(true);
             const quiz = await quizClientSubmit(user, answers);
             if (quiz.statusCode == 200) {
                 router.replace(`/result/${quiz.data._id}`);
@@ -52,10 +54,8 @@ const QuizLayout = () => {
                 handleLoading(false);
             }
         } else {
-            await handleLoading(true);
-            await handleScenario(newScenario);
-            await setAnswers((oldArray: any) => [...oldArray, newAnswer]);
-            await handleLoading(false);
+            handleScenario(newScenario);
+            setAnswers((oldArray: any) => [...oldArray, newAnswer]);
         }
     };
 
@@ -83,7 +83,7 @@ const QuizLayout = () => {
     const _hue_filter = "hue-rotate-["+questionHue.toString() + "deg]"
     return user ? (
         questionData && collection && (
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="popLayout">
                 questionData && collection && (
                 <motion.div
                     initial="hidden"

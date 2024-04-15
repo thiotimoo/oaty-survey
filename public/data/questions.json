@@ -530,12 +530,39 @@
             {
                 "body": "Menyembunyikan dari ibu, dan langsung memesan yang baru di online agar tidak diketahui ibu mu",
                 "points": 1,
-                "nextQuestion": "27A"
+                "nextQuestion": "26B"
+            }
+        ]
+    },
+    "25B": {
+        "question": "Kamu tetap merasa bosan, lalu Kamu memutuskan untuk olahraga, tapi saat olahraga kamu memecahkan gelas milik ibu mu",
+        "bg": "bg1",
+        "choices": [
+            {
+                "body": "Langsung mengakui kepada ibumu",
+                "points": 0,
+                "nextQuestion": "26A"
+            },
+            {
+                "body": "Menyembunyikan dari ibu, dan langsung memesan yang baru di online agar tidak diketahui ibu mu",
+                "points": 1,
+                "nextQuestion": "26B"
             }
         ]
     },
     "26A": {
         "question": "Ibu tidak marah, hanya menyuruh mu berhati-hati",
+        "bg": "bg1",
+        "choices": [
+            {
+                "body": "Next",
+                "points": 0,
+                "nextQuestion": "27A"
+            }
+        ]
+    },
+    "26B": {
+        "question": "Ibu mengetahui bahwa gelas nya rusak lalu memarahi kamu karena menyembunyikan sesuatu, dan menyuruh mu untuk jujur dan berhati-hati",
         "bg": "bg1",
         "choices": [
             {
