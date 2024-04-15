@@ -16,7 +16,7 @@ const QuizLayout = () => {
     const [loading, setLoading] = useState(false);
     const [scenario, setScenario] = useState("1A");
     const [countAnswer, setCountAnswer] = useState(1);
-    const [user, setUser] = useState({name: "miau"});
+    const [user, setUser] = useState();
     const [collection, setCollection]: any = useState();
     const [questionData, setQuestionData]: any = useState();
     const [answers, setAnswers]: any = useState([]);
