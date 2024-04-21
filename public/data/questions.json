@@ -9,7 +9,7 @@
             },
             {
                 "body": "Mematikan alarm dan duduk sebentar lalu pergi bersiap-siap ke sekolah",
-                "points": -1,
+                "points": 0,
                 "nextQuestion": "2A"
             }
         ]
@@ -28,7 +28,7 @@
                 "nextQuestion": "3B"
             },
             {
-                "body": "Pasrah",
+                "body": "Biarin aja",
                 "points": -1,
                 "nextQuestion": "3B"
             }
@@ -50,14 +50,14 @@
         "bg": "bg2",
         "choices": [
             {
-                "body": "Kamu tetap santai dan jujur kepada gurunya",
+                "body": "Ketinggalan driumah (Berbohong)",
                 "points": -1,
                 "nextQuestion": "4A"
             },
             {
-                "body": "Kamu cemas dan memberikan alasan yang tidak masuk akal",
+                "body": "Panik & gatau mau jawab apa",
                 "points": 1,
-                "nextQuestion": "4A"
+                "nextQuestion": "4B"
             }
         ]
     },
@@ -87,7 +87,7 @@
                 "nextQuestion": "6A"
             },
             {
-                "body": "Kamu tertawa bersama temanmu sambil menahan malu.",
+                "body": "Kamu diam karena malu.",
                 "points": 1,
                 "nextQuestion": "6A"
             }
@@ -104,7 +104,7 @@
             },
             {
                 "body": "Diam dan menunggu orang lain maju karena kalian takut salah membuat puisi",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "7A"
             },
             {
@@ -119,12 +119,12 @@
         "bg": "bg2",
         "choices": [
             {
-                "body": "Harusnya gw maju aja tadi, puisinya juga mirip sama yang gw pikirin.",
+                "body": "Tau gitu gw maju aja, pasti bener gw.",
                 "points": 1,
                 "nextQuestion": "8A"
             },
             {
-                "body": "Bodoamat lah.",
+                "body": "Biarin aja.",
                 "points": -1,
                 "nextQuestion": "8A"
             }
@@ -135,7 +135,7 @@
         "bg": "bg2",
         "choices": [
             {
-                "body": "Duh kenapa kurang bagus ya.",
+                "body": "Kurang apa ya.",
                 "points": 1,
                 "nextQuestion": "8A"
             },
@@ -159,11 +159,6 @@
                 "body": "Minta maaf dan pergi.",
                 "points": 0,
                 "nextQuestion": "9A"
-            },
-            {
-                "body": "Kamu minta maaf berkali-kali lalu pergi.",
-                "points": 1,
-                "nextQuestion": "9A"
             }
         ]
     },
@@ -177,7 +172,7 @@
                 "nextQuestion": "11A"
             },
             {
-                "body": "Kamu mendatanginya dan menawarkan untuk membersihkan jaketnya agar dia tidak marah kepadamu lagi",
+                "body": "Kamu kepikiran kejadian tadi dan akhirnya kamu mendatanginya dan menawarkan untuk membersihkan jaketnya agar dia tidak marah kepadamu lagi",
                 "points": 1,
                 "nextQuestion": "10A"
             }
@@ -210,7 +205,7 @@
             },
             {
                 "body": "Kamu mempunyai saran tapi kamu memilih tidak mengungkapkan nya karena takut salah",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "12B"
             }
         ]
@@ -231,7 +226,7 @@
             },
             {
                 "body": "Kamu diam dan merenung",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "14A"
             }
         ]
@@ -290,7 +285,7 @@
         ]
     },
     "14A": {
-        "question": "Saat pulang sekolah teman mu mengajak mu bermain badminton.",
+        "question": "Saat pulang sekolah teman mu mengajak untuk bermain badminton.",
         "bg": "bg2",
         "choices": [
             {
@@ -315,7 +310,7 @@
                 "nextQuestion": "16A"
             },
             {
-                "body": "Kamu panik dan buru-buru telpon orang tua",
+                "body": "Kamu panik & takut dimarahi & langsung telp orang tua",
                 "points": 1,
                 "nextQuestion": "16B"
             }
@@ -353,12 +348,12 @@
         "bg": "bg4",
         "choices": [
             {
-                "body": "Kamu panik dan langsung pergi pulang",
+                "body": "Duh pasti marah ini",
                 "points": 1,
                 "nextQuestion": "17A"
             },
             {
-                "body": "Kamu berpikir orang tua mu lagi sibuk lalu kamu pergi pulang",
+                "body": "Lagi sibuk kali ya",
                 "points": 0,
                 "nextQuestion": "17A"
             }
@@ -369,17 +364,17 @@
         "bg": "bg5",
         "choices": [
             {
-                "body": "Memikirkan alasan yang mau diberikan kepada orang tua mu",
+                "body": "Pasti dimarahin nih",
                 "points": 1,
                 "nextQuestion": "18A"
             },
             {
-                "body": "Memikirkan apa mereka marah atau hanya sibuk?",
-                "points": 1,
+                "body": "Biarin lah kena marah juga",
+                "points": -1,
                 "nextQuestion": "18A"
             },
             {
-                "body": "Kamu hanya fokus mengendarai motor",
+                "body": "Ah santai aja pasti cuman sibuk",
                 "points": 0,
                 "nextQuestion": "18A"
             }
@@ -402,7 +397,7 @@
         "choices": [
             {
                 "body": "Kamu panik dan langsung pergi belajar",
-                "points": 1,
+                "points": 0,
                 "nextQuestion": "20A"
             },
             {
@@ -423,7 +418,7 @@
         "choices": [
             {
                 "body": "Panik dan tetap melanjutkan belajar hingga jam 12",
-                "points": 1,
+                "points": 0,
                 "nextQuestion": "21A"
             },
             {
@@ -439,11 +434,11 @@
         "choices": [
             {
                 "body": "Kamu panik dan gelisah dan langsung belajar",
-                "points": 1,
+                "points": 0,
                 "nextQuestion": "21A"
             },
             {
-                "body": "Pergi tidur dan berdoa besok mendapatkan nilai bagus",
+                "body": "Langsung pergi tidur",
                 "points": -1,
                 "nextQuestion": "22A"
             }
@@ -455,7 +450,7 @@
         "choices": [
             {
                 "body": "Gabisa tidur karena kepikiran nilai ulangan besok",
-                "points": 1,
+                "points": 3,
                 "nextQuestion": "22A"
             },
             {
@@ -503,17 +498,17 @@
         "choices": [
             {
                 "body": "'Ok' lalu mencari kegiatan baru",
-                "points": -1,
+                "points": 0,
                 "nextQuestion": "25A"
             },
             {
-                "body": "Sedih, lalu berpikir enak banget ya mereka liburan nanti kalau gw ditanya kemana gw jawab apa",
+                "body": "Sedih karena ga pergi kemana-mana & takut ditanyai 'pergi kemana aja lu pas liburan' ",
                 "points": 1,
                 "nextQuestion": "25B"
             },
             {
                 "body": "'Ok' Lanjut nonton drakor/Anime/Hollywood",
-                "points": 0,
+                "points": -1,
                 "nextQuestion": "25B"
             }
         ]
@@ -530,39 +525,12 @@
             {
                 "body": "Menyembunyikan dari ibu, dan langsung memesan yang baru di online agar tidak diketahui ibu mu",
                 "points": 1,
-                "nextQuestion": "26B"
-            }
-        ]
-    },
-    "25B": {
-        "question": "Kamu tetap merasa bosan, lalu Kamu memutuskan untuk olahraga, tapi saat olahraga kamu memecahkan gelas milik ibu mu",
-        "bg": "bg1",
-        "choices": [
-            {
-                "body": "Langsung mengakui kepada ibumu",
-                "points": 0,
-                "nextQuestion": "26A"
-            },
-            {
-                "body": "Menyembunyikan dari ibu, dan langsung memesan yang baru di online agar tidak diketahui ibu mu",
-                "points": 1,
-                "nextQuestion": "26B"
+                "nextQuestion": "27A"
             }
         ]
     },
     "26A": {
         "question": "Ibu tidak marah, hanya menyuruh mu berhati-hati",
-        "bg": "bg1",
-        "choices": [
-            {
-                "body": "Next",
-                "points": 0,
-                "nextQuestion": "27A"
-            }
-        ]
-    },
-    "26B": {
-        "question": "Ibu mengetahui bahwa gelas nya rusak lalu memarahi kamu karena menyembunyikan sesuatu, dan menyuruh mu untuk jujur dan berhati-hati",
         "bg": "bg1",
         "choices": [
             {
@@ -600,16 +568,15 @@
         ]
     },
     "29A": {
-        "question": "Saat sedang tiduran kamu memikirkan sesuatu",
-        "bg": "bg1",
+        "question": "Kamu sedang tidak ngapa-ngapain",
         "choices": [
             {
-                "body": "Mikirin mau masuk univ apa",
+                "body": "gabisa tidur karena Mikirin mau masuk univ apa",
                 "points": 1,
                 "nextQuestion": "30A"
             },
             {
-                "body": "Mau ngapain ya, bosen bgt",
+                "body": "Ngapain ya",
                 "points": 0,
                 "nextQuestion": "30B"
             }
@@ -626,11 +593,11 @@
             },
             {
                 "body": "Berisik lu (Kesel)",
-                "points": 0,
+                "points": -1,
                 "nextQuestion": "31A"
             },
             {
-                "body": "Yaudah sih (Sedih)",
+                "body": "Diem (Sedih)",
                 "points": 1,
                 "nextQuestion": "31A"
             }
@@ -647,7 +614,7 @@
             },
             {
                 "body": "Berisik lu (Kesel)",
-                "points": 0,
+                "points": -1,
                 "nextQuestion": "31A"
             },
             {
@@ -673,7 +640,7 @@
             },
             {
                 "body": "Ah gabakal keterima ini mah, dimana lgi ya 😞😞",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "32A"
             }
         ]
@@ -689,7 +656,7 @@
             },
             {
                 "body": "'Gabisa, kata temen aku nilai aku gacukup 😞'",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "33C"
             }
         ]
@@ -704,7 +671,7 @@
                 "nextQuestion": "33B"
             },
             {
-                "body": "Belum cukup sih kata temen ku",
+                "body": "'Gabisa, kata temen aku nilai aku gacukup 😞",
                 "points": 1,
                 "nextQuestion": "33C"
             }
@@ -715,7 +682,7 @@
         "bg": "bg6",
         "choices": [
             {
-                "body": "Next",
+                "body": "Next to 34A",
                 "points": 0,
                 "nextQuestion": "34A"
             }
@@ -726,7 +693,7 @@
         "bg": "bg6",
         "choices": [
             {
-                "body": "Next",
+                "body": "Next to 34A",
                 "points": 0,
                 "nextQuestion": "34A"
             }
@@ -737,7 +704,7 @@
         "bg": "bg6",
         "choices": [
             {
-                "body": "Next",
+                "body": "Next to 34A",
                 "points": 0,
                 "nextQuestion": "34A"
             }
@@ -764,7 +731,7 @@
         "bg": "bg1",
         "choices": [
             {
-                "body": "Ga tenang karena omongan ayah",
+                "body": "Ga tenang karena kepikiran omongan ayah",
                 "points": 1,
                 "nextQuestion": "36A"
             },
@@ -811,7 +778,7 @@
                 "nextQuestion": "38A"
             },
             {
-                "body": "Nanti pas masuk sekolah pasti mereka cerita pas mereka jalan-jalan",
+                "body": "Duh nanti pas masuk sekolah pasti mereka cerita pas mereka jalan-jalan",
                 "points": 1,
                 "nextQuestion": "38A"
             }
@@ -854,13 +821,13 @@
         "bg": "bg2",
         "choices": [
             {
-                "body": "Menaggap itu sebuah candaan",
-                "points": 0,
+                "body": "Menganggap itu sebuah candaan",
+                "points": -2,
                 "nextQuestion": "41A"
             },
             {
                 "body": "Sedih karena + jadi ga pede😞",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "41A"
             }
         ]
