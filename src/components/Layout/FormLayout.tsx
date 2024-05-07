@@ -127,15 +127,18 @@ const FormNavigator = ({
     }
 };
 
-
 const NamePage = ({ page, handlePage, handleUsername, username }: any) => {
     const [error, setError] = useState("");
     const handleNext = () => {
         if (username.trim() == "") {
             setError("Nama tidak boleh kosong!");
         } else {
+            const inputName = document.getElementById("input-name");
             setError("");
             handlePage(2);
+            try {
+                if (inputName) return inputName.blur();
+            } catch (e) {}
         }
     };
     return (
@@ -147,6 +150,7 @@ const NamePage = ({ page, handlePage, handleUsername, username }: any) => {
             callback={handleNext}
         >
             <motion.input
+                id="input-name"
                 whileTap={{ scale: 0.9 }}
                 className="bg-white px-4 py-2 rounded-lg text-lg w-full shadow-lg"
                 onKeyDown={(event) => {
@@ -388,7 +392,14 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
     );
 };
 
-const ClassPage = ({ page, handlePage, handleClassroom, school, handleUser, user }: any) => {
+const ClassPage = ({
+    page,
+    handlePage,
+    handleClassroom,
+    school,
+    handleUser,
+    user,
+}: any) => {
     const [classroom, setClassroom] = useState("");
     const [error, setError] = useState("");
     const handleChangeClassroom = (value: any) => {
@@ -579,7 +590,6 @@ const ClassPage = ({ page, handlePage, handleClassroom, school, handleUser, user
     );
 };
 
-
 const TemplateDialog = ({
     text,
     button,
@@ -618,9 +628,7 @@ const TemplateDialog = ({
                     />
                 </div>
 
-                <div
-                    className="w-full flex flex-col justify-center items-center gap-4"
-                >
+                <div className="w-full flex flex-col justify-center items-center gap-4">
                     {children}
                     <motion.button
                         whileHover={{
