@@ -3,19 +3,7 @@ import { CaretRight, Download } from "@phosphor-icons/react/dist/ssr";
 import { motion } from "framer-motion";
 import React from "react";
 
-const SaveButton = ({ result, session_id, loading, setLoading }: any) => {
-    const download = (filename: any, content: any) => {
-        var element = document.createElement("a");
-        element.setAttribute("href", content);
-        element.setAttribute("download", filename);
-        element.style.display = "none";
-        document.body.appendChild(element);
-
-        element.click();
-
-        document.body.removeChild(element);
-    };
-
+const SaveButton = ({ result, session_id, loading, setLoading, image_url }: any) => {
     const handleDownload = async (e: any) => {
         try {
             var link = document.getElementById("link-download");
@@ -23,7 +11,7 @@ const SaveButton = ({ result, session_id, loading, setLoading }: any) => {
             link.setAttribute("download", "Hasil-OATY.png");
             link.setAttribute(
                 "href",
-                result.image_url
+                image_url
                     .replace("image/jpeg", "image/octet-stream")
             );
             link.click();

@@ -56,7 +56,7 @@ const ResultLayout = ({ result_id }: any) => {
                     </div>
                 </div>
                 <div className="flex flex-row gap-2">
-                <SaveButton result={result} />
+                <SaveButton image_url={data.image_url} />
                 <RetryQuizButton result={result} handleLoading={handleLoading} />
                 </div>
             </div>

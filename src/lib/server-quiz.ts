@@ -15,7 +15,7 @@ export function quizGenerateCharacter(points: number) {
     if (points >= 20) {
         character = "vina";
     } else if (points <= 19 && points >= 7) {
-        character = "rira";
+        character = "vira";
     } else if (points <= 6 && points >= -2) {
         character = "pito";
     } else if (points <= -3 && points >= -14) {
