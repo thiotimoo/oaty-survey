@@ -44,7 +44,7 @@ const ResultLayout = ({ result_id }: any) => {
             {result && !loading ? (
             <div className="flex flex-col justify-center items-center min-h-svh max-w-sm m-auto  p-6 gap-4">
                 <div className="flex-grow">
-                    <div className="flex-grow outline outline-black border-inherit rounded-2xl w-auto h-full flex items-center justify-center relative ">
+                    <div className="flex-grow border-black border-2 rounded-2xl w-auto h-full flex items-center justify-center relative ">
                         <Image
                             src={data.image_url}
                             alt={data.image_url}
