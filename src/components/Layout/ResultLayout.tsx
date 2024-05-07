@@ -50,6 +50,7 @@ const ResultLayout = ({ result_id }: any) => {
                             alt={data.image_url}
                             width={1080}
                             height={1920}
+                            unoptimized
                             className="rounded-2xl overflow-clip h-full w-auto object-contain bg-red-500"
                         />
                     </div>
