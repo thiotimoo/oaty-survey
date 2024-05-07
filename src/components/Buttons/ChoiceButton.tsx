@@ -9,10 +9,17 @@ const ChoiceButton = ({
     scenario,
     index,
     handleAnswers,
-    handleScenario
 }: any) => {
     const onAnswer = async (choice: number) => {
-        handleAnswers({scenario: scenario, choice: choice},data.choices[choice].nextQuestion);
+        const nextFirstAnswer = { scenario: scenario, choice: 0 };
+        const nextFirstScenario = data.choices[0].nextQuestion;
+        
+        handleAnswers(
+            { scenario: scenario, choice: choice },
+            data.choices[choice].nextQuestion,
+            nextFirstAnswer,
+            nextFirstScenario
+        );
     };
     let bgButton = "";
     switch (index) {

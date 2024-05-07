@@ -48,7 +48,7 @@ const FormLayout = ({ handleUser }: any) => {
     };
 
     return (
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="popLayout">
             <motion.div
                 key={page}
                 initial="hidden"
@@ -89,25 +89,23 @@ const FormNavigator = ({
 }: any) => {
     switch (page) {
         case 1:
-            return <FirstPage page={page} handlePage={handlePage} />;
-        case 2:
             return (
-                <SecondPage
+                <NamePage
                     page={page}
                     handlePage={handlePage}
                     handleUsername={handleUsername}
                     username={username}
                 />
             );
-        case 3:
+        case 2:
             return (
-                <ThirdPage
+                <GenderPage
                     page={page}
                     handlePage={handlePage}
                     handleGender={handleGender}
                 />
             );
-        case 4:
+        case 3:
             return (
                 <SchoolPage
                     page={page}
@@ -115,7 +113,7 @@ const FormNavigator = ({
                     handleSchool={handleSchool}
                 />
             );
-        case 5:
+        case 4:
             return (
                 <ClassPage
                     page={page}
@@ -124,7 +122,7 @@ const FormNavigator = ({
                     handleClassroom={handleClassroom}
                 />
             );
-        case 6:
+        default:
             return (
                 <FinishPage
                     page={page}
@@ -133,64 +131,18 @@ const FormNavigator = ({
                     handleUser={handleUser}
                 />
             );
-            case 7:
-            return <ConsentPage page={page} handlePage={handlePage} />;
     }
 };
 
-const FirstPage = ({ page, handlePage, user }: any) => {
-    const handleNext = () => {
-        handlePage(7);
-    };
-    return (
-        <TemplateDialog
-            text="Selamat datang di Oaty! Di sini, kamu akan menjawab beberapa
-        pertanyaan yang akan mengukur tingkat overthinking kamu."
-            button="Lanjut"
-            callback={handleNext}
-            top={
-                <Image
-                    className="rounded-xl md:w-64 md:h-64 w-32 h-32 aspect-square object-cover"
-                    src={"/assets/cat_greetings.gif"}
-                    alt="Hello!"
-                    width={200}
-                    height={200}
-                />
-            }
-        ></TemplateDialog>
-    );
-};
 
-const ConsentPage = ({ page, handlePage, user }: any) => {
-    const handleNext = () => {
-        handlePage(2);
-    };
-    return (
-        <TemplateDialog
-            text="Oh ya, sekedar pemberitahuan. Kami akan menggunakan hasil survey kalian untuk proyek akhir Informatika kami, dan hasil kamu akan tetap dijaga kerahasiaannya. Apakah kamu tidak keberatan?"
-            button="Iya, bolehh. 👍"
-            callback={handleNext}
-            top={
-                <Image
-                    className="rounded-xl md:w-64 md:h-64 w-32 h-32 aspect-square object-cover"
-                    src={"/assets/nerd.png"}
-                    alt="Nerd Emoji"
-                    width={200}
-                    height={200}
-                />
-            }
-        ></TemplateDialog>
-    );
-};
-
-const SecondPage = ({ page, handlePage, handleUsername, username }: any) => {
+const NamePage = ({ page, handlePage, handleUsername, username }: any) => {
     const [error, setError] = useState("");
     const handleNext = () => {
         if (username.trim() == "") {
             setError("Nama tidak boleh kosong!");
         } else {
             setError("");
-            handlePage(3);
+            handlePage(2);
         }
     };
     return (
@@ -199,15 +151,6 @@ const SecondPage = ({ page, handlePage, handleUsername, username }: any) => {
             error={error}
             text="Siapa nama kamu?"
             button="Lanjut"
-            top={
-                <Image
-                    className="rounded-xl md:w-64 md:h-64 w-32 h-32 aspect-square object-contain "
-                    src={"/assets/cat_boing.gif"}
-                    alt="Cat Calm"
-                    width={200}
-                    height={200}
-                />
-            }
             callback={handleNext}
         >
             <motion.input
@@ -317,14 +260,14 @@ const SelectionClass = ({ selectedValue, value, handleChange }: any) => {
     );
 };
 
-const ThirdPage = ({ page, handlePage, handleGender }: any) => {
+const GenderPage = ({ page, handlePage, handleGender }: any) => {
     const [gender, setGender] = useState(0);
     const handleChangeGender = (value: any) => {
         setGender(value);
     };
     const handleNext = () => {
         handleGender(gender);
-        handlePage(4);
+        handlePage(3);
     };
     return (
         <TemplateDialog
@@ -341,7 +284,7 @@ const ThirdPage = ({ page, handlePage, handleGender }: any) => {
                 >
                     <Image
                         className="aspect-square object-contain"
-                        src={"/assets/omori-transparent.gif"}
+                        src={"/assets/omori-transparent.png"}
                         alt="Laki-laki"
                         width={200}
                         height={200}
@@ -355,7 +298,7 @@ const ThirdPage = ({ page, handlePage, handleGender }: any) => {
                 >
                     <Image
                         className="aspect-square object-contain"
-                        src={"/assets/female-transparent.webp"}
+                        src={"/assets/female-transparent.png"}
                         alt="Perempuan"
                         width={200}
                         height={200}
@@ -393,7 +336,7 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
         } else {
             setError("");
             handleSchool(school);
-            handlePage(5);
+            handlePage(4);
         }
     };
     return (
@@ -464,13 +407,12 @@ const ClassPage = ({ page, handlePage, handleClassroom, school }: any) => {
         } else {
             setError("");
             handleClassroom(classroom);
-            handlePage(6);
+            handlePage(5);
         }
     };
     const handleYosClass = () => {
         return (
             <div className="w-full flex flex-col justify-center items-center p-2 gap-2">
-                
                 <div className="flex flex-col gap-2 w-full">
                     <span className="text-base font-bold text-start w-full">
                         SMA
@@ -652,15 +594,6 @@ const FinishPage = ({ page, handlePage, user, handleUser }: any) => {
         <TemplateDialog
             text="Rileks saja, dan ikuti alurnya dengan jujur ya :D"
             button="Ayo kita mulai"
-            top={
-                <Image
-                    className="rounded-xl md:w-64 md:h-64 w-32 h-32 aspect-square object-contain"
-                    src={"/assets/cat_calm.gif"}
-                    alt="Cat Calm"
-                    width={200}
-                    height={200}
-                />
-            }
             callback={handleNext}
         />
     );
@@ -703,39 +636,35 @@ const TemplateDialog = ({
                         }}
                     />
                 </div>
-                {finish && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="w-full flex flex-col justify-center items-center gap-4"
+
+                <div
+                    className="w-full flex flex-col justify-center items-center gap-4"
+                >
+                    {children}
+                    <motion.button
+                        whileHover={{
+                            scale: 1.2,
+                            transition: { duration: 1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                        className="flex flex-row justify-center items-center text-center text-lg gap-2 bg-primary  text-black font-bold ps-8 pe-6 py-4 rounded-full"
+                        onClick={callback}
                     >
-                        {children}
-                        <motion.button
-                            whileHover={{
-                                scale: 1.2,
-                                transition: { duration: 1 },
-                            }}
-                            whileTap={{ scale: 0.9 }}
-                            className="flex flex-row justify-center items-center text-center text-lg gap-2 bg-primary  text-black font-bold ps-8 pe-6 py-4 rounded-full"
-                            onClick={callback}
+                        {button}
+                        <CaretRight size={24} weight="fill" />
+                    </motion.button>
+                    {error != "" && (
+                        <motion.p
+                            key={error}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="text-red-700 font-bold w-full flex flex-col justify-center items-center gap-4"
                         >
-                            {button}
-                            <CaretRight size={24} weight="fill" />
-                        </motion.button>
-                        {error != "" && (
-                            <motion.p
-                                key={error}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                className="text-red-700 font-bold w-full flex flex-col justify-center items-center gap-4"
-                            >
-                                {error}
-                            </motion.p>
-                        )}
-                    </motion.div>
-                )}
+                            {error}
+                        </motion.p>
+                    )}
+                </div>
             </div>
         </AnimatePresence>
     );

@@ -37,12 +37,17 @@ const QuizLayout = () => {
 
     const handleScenario = async (newScenario: any) => {
         setScenario(newScenario);
-        console.log(newScenario);
         setCountAnswer((countAnswer) => countAnswer + 1);
         scrollToTop();
     };
 
-    const handleAnswers = async (newAnswer: any, newScenario: string) => {
+    const handleAnswers = async (
+        newAnswer: any,
+        newScenario: string,
+        nextFirstAnswer: any,
+        nextFirstScenario: string,
+        
+    ) => {
         if (newScenario.startsWith("END")) {
             handleLoading(true);
             const quiz = await quizClientSubmit(user, answers);
@@ -53,8 +58,15 @@ const QuizLayout = () => {
                 handleLoading(false);
             }
         } else {
-            handleScenario(newScenario);
-            setAnswers((oldArray: any) => [...oldArray, newAnswer]);
+            
+            if (collection[newScenario]) {
+                handleScenario(newScenario);
+                setAnswers((oldArray: any) => [...oldArray, newAnswer]);
+            } else if (collection[nextFirstScenario]) {
+                alert("COULD NOT FIND QUESTION!");
+                handleScenario(nextFirstScenario);
+                setAnswers((oldArray: any) => [...oldArray, nextFirstAnswer]);
+            }
         }
     };
 
