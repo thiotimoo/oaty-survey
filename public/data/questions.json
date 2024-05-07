@@ -504,12 +504,12 @@
             {
                 "body": "Sedih karena ga pergi kemana-mana & takut ditanyai 'pergi kemana aja lu pas liburan' ",
                 "points": 1,
-                "nextQuestion": "25B"
+                "nextQuestion": "25A"
             },
             {
                 "body": "'Ok' Lanjut nonton drakor/Anime/Hollywood",
                 "points": -1,
-                "nextQuestion": "25B"
+                "nextQuestion": "25A"
             }
         ]
     },
@@ -682,7 +682,7 @@
         "bg": "bg6",
         "choices": [
             {
-                "body": "Next to 34A",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "34A"
             }
@@ -693,7 +693,7 @@
         "bg": "bg6",
         "choices": [
             {
-                "body": "Next to 34A",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "34A"
             }
@@ -704,7 +704,7 @@
         "bg": "bg6",
         "choices": [
             {
-                "body": "Next to 34A",
+                "body": "Next",
                 "points": 0,
                 "nextQuestion": "34A"
             }
