@@ -1,6 +1,6 @@
 "use client";
 import { CaretRight, Download } from "@phosphor-icons/react/dist/ssr";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 import React from "react";
 
 const SaveButton = ({ result, session_id, loading, setLoading }: any) => {
@@ -18,20 +18,22 @@ const SaveButton = ({ result, session_id, loading, setLoading }: any) => {
 
     const handleDownload = async (e: any) => {
         try {
-            const res = await fetch(result.image_url, {
-                method: "GET",
-                headers: {},
-            });
-            const blob = await res.blob();
-            const url = URL.createObjectURL(blob);
-            download("test", url);
-            URL.revokeObjectURL(url);
+            var link = document.getElementById("link-download");
+            if (!link) return
+            link.setAttribute("download", "Hasil-OATY.png");
+            link.setAttribute(
+                "href",
+                result.image_url
+                    .replace("image/jpeg", "image/octet-stream")
+            );
+            link.click();
         } catch (error) {
             console.error(error);
         }
     };
     return (
         <div>
+            <a id="link-download"></a>
             <motion.button
                 disabled={loading}
                 whileHover={{
@@ -44,7 +46,6 @@ const SaveButton = ({ result, session_id, loading, setLoading }: any) => {
             >
                 <Download size={24} weight="fill" />
                 Download
-                
             </motion.button>
         </div>
     );
