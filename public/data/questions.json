@@ -56,7 +56,7 @@
             },
             {
                 "body": "Panik & gatau mau jawab apa",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "4A"
             }
         ]
@@ -237,7 +237,7 @@
         "choices": [
             {
                 "body": "Tetap memendam ide karena takut dibilang 'ide yang aneh'",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "13B"
             },
             {
@@ -279,7 +279,7 @@
             },
             {
                 "body": "Kamu merasa malu karena pendapat mu ditolak, dan akhirnya kamu hanya mendukung gagasan dari teman hingga pelajaran selesai",
-                "points": 1,
+                "points": 2,
                 "nextQuestion": "14A"
             }
         ]
@@ -397,7 +397,7 @@
         "choices": [
             {
                 "body": "Kamu panik dan langsung pergi belajar",
-                "points": 0,
+                "points": 1,
                 "nextQuestion": "20A"
             },
             {
@@ -418,7 +418,7 @@
         "choices": [
             {
                 "body": "Panik dan tetap melanjutkan belajar hingga jam 12",
-                "points": 0,
+                "points": 1,
                 "nextQuestion": "21A"
             },
             {
