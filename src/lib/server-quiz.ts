@@ -26,21 +26,21 @@ export function quizGenerateCharacter(points: number) {
     return `result-${character}.jpg`
 }
 export async function quizGenerateImage(result: any) {
-    const canvas = createCanvas(1080, 1920);
+    const canvas = createCanvas(1080 / 4, 1920 / 4);
     const ctx = canvas.getContext("2d");
 
     const image = await loadImage(
         path.join(process.cwd(), 'public', 'results', quizGenerateCharacter(result.points).toString())
     );
-    ctx.drawImage(image, 0, 0, 1080, 1920);
+    ctx.drawImage(image, 0, 0, 1080 / 4, 1920 / 4);
 
-    ctx.font = "40px Jua";
+    ctx.font = "10px Jua";
     ctx.textAlign = "left";
-    ctx.fillText(result.user.username, 100, 125);
+    ctx.fillText(result.user.username, 100 / 4, 125 / 4);
 
-    ctx.font = "30px Jua";
+    ctx.font = "5px Jua";
     ctx.textAlign = "left";
-    ctx.fillText(result.id, 100, 165);
+    ctx.fillText(result.id, 100 / 4, 165 / 4);
     return canvas.toDataURL();
 }
 

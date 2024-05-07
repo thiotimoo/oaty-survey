@@ -8,7 +8,7 @@ const LoadingLayout = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 0, opacity: 0 }}
             role="status" 
-            className="m-auto"
+            className="m-auto flex flex-row justify-center items-center"
         >
             <svg
                 aria-hidden="true"
@@ -26,7 +26,7 @@ const LoadingLayout = () => {
                     fill="currentFill"
                 />
             </svg>
-            <span className="sr-only">Loading...</span>
+            <span>Maaf ya kalau agak lama, hehe...</span>
         </motion.div>
     );
 };
