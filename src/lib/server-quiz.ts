@@ -26,7 +26,7 @@ export function quizGenerateCharacter(points: number) {
     return `result-${character}.jpg`;
 }
 export async function quizGenerateImage(result: any) {
-    const canvas = createCanvas(1080, 1920);
+    const canvas = createCanvas(1080/2, 1920/2);
     const ctx = canvas.getContext("2d");
 
     const image = await loadImage(
