@@ -20,8 +20,8 @@ const QuestionLayout = ({ data, user, countAnswer, points }: any) => {
                     <p className="text-base text-neutral-500">
                         Question {countAnswer}
                     </p>
-                    <p className="text-base text-black flex flex-row gap-1 justify-center items-center p-1 bg-white rounded-full">
-                        <StarFour weight="fill"/>
+                    <p className=" text-black flex flex-row gap-1 justify-center items-center px-2 py-1 bg-white rounded-full text-sm">
+                        <StarFour weight="fill" size={16}/>
                         {points}
                     </p>
                 </div>
