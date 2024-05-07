@@ -317,8 +317,7 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
     const handleCustomSchool = (e: any) => {
         const value = e.target.value;
         if (
-            value.toUpperCase() == "YOS SUDARSO KARAWANG" ||
-            value.toUpperCase() == "TUNAS DHARMA KARAWANG"
+            value.toUpperCase() == "YOS SUDARSO KARAWANG"
         ) {
             handleChangeSchool(value.toUpperCase());
             setCustomSchool("");
