@@ -113,20 +113,13 @@ const FormNavigator = ({
                     handleSchool={handleSchool}
                 />
             );
-        case 4:
+        default:
             return (
                 <ClassPage
                     page={page}
                     school={school}
                     handlePage={handlePage}
                     handleClassroom={handleClassroom}
-                />
-            );
-        default:
-            return (
-                <FinishPage
-                    page={page}
-                    handlePage={handlePage}
                     user={user}
                     handleUser={handleUser}
                 />
@@ -395,7 +388,7 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
     );
 };
 
-const ClassPage = ({ page, handlePage, handleClassroom, school }: any) => {
+const ClassPage = ({ page, handlePage, handleClassroom, school, handleUser, user }: any) => {
     const [classroom, setClassroom] = useState("");
     const [error, setError] = useState("");
     const handleChangeClassroom = (value: any) => {
@@ -407,7 +400,7 @@ const ClassPage = ({ page, handlePage, handleClassroom, school }: any) => {
         } else {
             setError("");
             handleClassroom(classroom);
-            handlePage(5);
+            handleUser(user);
         }
     };
     const handleYosClass = () => {
@@ -586,18 +579,6 @@ const ClassPage = ({ page, handlePage, handleClassroom, school }: any) => {
     );
 };
 
-const FinishPage = ({ page, handlePage, user, handleUser }: any) => {
-    const handleNext = () => {
-        handleUser(user);
-    };
-    return (
-        <TemplateDialog
-            text="Rileks saja, dan ikuti alurnya dengan jujur ya :D"
-            button="Ayo kita mulai"
-            callback={handleNext}
-        />
-    );
-};
 
 const TemplateDialog = ({
     text,
