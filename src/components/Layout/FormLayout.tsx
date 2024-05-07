@@ -454,7 +454,7 @@ const ClassPage = ({ page, handlePage, handleClassroom, school, handleUser, user
                             handleChange={handleChangeClassroom}
                         />
                     </div>
-                    <div className="grid grid-cols-2 w-full bg-green-300 gap-2 p-2 rounded-xl">
+                    {/* <div className="grid grid-cols-2 w-full bg-green-300 gap-2 p-2 rounded-xl">
                         <SelectionClass
                             value="12.A1"
                             selectedValue={classroom}
@@ -475,7 +475,7 @@ const ClassPage = ({ page, handlePage, handleClassroom, school, handleUser, user
                             selectedValue={classroom}
                             handleChange={handleChangeClassroom}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div className="flex flex-col gap-2 w-full">
                     <span className="text-base font-bold text-start w-full">
