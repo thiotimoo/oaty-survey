@@ -284,7 +284,7 @@ const GenderPage = ({ page, handlePage, handleGender }: any) => {
                 >
                     <Image
                         className="aspect-square object-contain"
-                        src={"/assets/omori-transparent.png"}
+                        src={"/assets/omori-transparent.webp"}
                         alt="Laki-laki"
                         width={200}
                         height={200}
@@ -298,7 +298,7 @@ const GenderPage = ({ page, handlePage, handleGender }: any) => {
                 >
                     <Image
                         className="aspect-square object-contain"
-                        src={"/assets/female-transparent.png"}
+                        src={"/assets/female-transparent.webp"}
                         alt="Perempuan"
                         width={200}
                         height={200}
@@ -356,7 +356,7 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
                     <Image
                         alt="Yos Sudarso Karawang"
                         className="w-16 h-16 p-2"
-                        src="/assets/school-yos.png"
+                        src="/assets/school-yos.webp"
                         width={200}
                         height={200}
                     />
@@ -370,7 +370,7 @@ const SchoolPage = ({ page, handlePage, handleSchool }: any) => {
                     <Image
                         alt="Tunas Dharma Karawang"
                         className="w-16 h-16 p-2"
-                        src="/assets/school-td.png"
+                        src="/assets/school-td.webp"
                         width={200}
                         height={200}
                     />

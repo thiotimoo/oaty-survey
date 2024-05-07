@@ -130,7 +130,7 @@ const QuizLayout = () => {
                                             priority={true}
                                             src={`/backgrounds/${
                                                 questionData.bg || "bg1"
-                                            }.jpg`}
+                                            }.webp`}
                                             width={900}
                                             height={900}
                                             alt="Background"

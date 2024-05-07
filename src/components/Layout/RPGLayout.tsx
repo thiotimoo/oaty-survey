@@ -8,8 +8,8 @@ const RPGLayout = ({ data, user }: any) => {
                 priority={true}
                 src={
                     user?.gender == 0
-                        ? "/assets/omori-transparent.png"
-                        : "/assets/female-transparent.png"
+                        ? "/assets/omori-transparent.webp"
+                        : "/assets/female-transparent.webp"
                 }
                 alt="Portrait"
                 className="aspect-square lg:h-64 md:h-52 h-48 w-auto object-contain"

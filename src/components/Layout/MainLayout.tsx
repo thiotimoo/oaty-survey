@@ -31,7 +31,7 @@ const MainLayout = () => {
                             <div>
                                 <Image
                                     alt="OATY"
-                                    src={"/assets/icon_light.png"}
+                                    src={"/assets/icon_light.webp"}
                                     className="h-48 w-auto object-contain p-2  aspect-square m-auto rounded-xl"
                                     width={500}
                                     height={500}
