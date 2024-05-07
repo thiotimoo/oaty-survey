@@ -134,7 +134,7 @@ const QuizLayout = () => {
                                             width={900}
                                             height={900}
                                             alt="Background"
-                                            className={`w-full h-full -z-10 object-cover max-w-screen-sm rounded-xl object-bottom`}
+                                            className={`w-full h-full -z-10 object-cover max-w-screen-sm rounded-xl object-bottom bg-blue-950`}
                                         />
                                     </div>
                                     <QuestionLayout
