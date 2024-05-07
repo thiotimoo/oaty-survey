@@ -13,12 +13,15 @@ const ChoiceButton = ({
     const onAnswer = async (choice: number) => {
         const nextFirstAnswer = { scenario: scenario, choice: 0 };
         const nextFirstScenario = data.choices[0].nextQuestion;
-        
+        const nextFirstPoints = data.choices[0].points;
+        const points = data.choices[choice].points;
         handleAnswers(
             { scenario: scenario, choice: choice },
             data.choices[choice].nextQuestion,
+            points,
             nextFirstAnswer,
-            nextFirstScenario
+            nextFirstScenario,
+            nextFirstPoints
         );
     };
     let bgButton = "";

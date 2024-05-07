@@ -20,6 +20,7 @@ const QuizLayout = () => {
     const [collection, setCollection]: any = useState();
     const [questionData, setQuestionData]: any = useState();
     const [answers, setAnswers]: any = useState([]);
+    const [points, setPoints] = useState(0);
     const isBrowser = () => typeof window !== "undefined";
 
     function scrollToTop() {
@@ -44,9 +45,10 @@ const QuizLayout = () => {
     const handleAnswers = async (
         newAnswer: any,
         newScenario: string,
+        newPoints: number,
         nextFirstAnswer: any,
         nextFirstScenario: string,
-        
+        nextFirstPoints: number,
     ) => {
         if (newScenario.startsWith("END")) {
             handleLoading(true);
@@ -60,9 +62,11 @@ const QuizLayout = () => {
         } else {
             
             if (collection[newScenario]) {
+                setPoints((point) => point + newPoints)
                 handleScenario(newScenario);
                 setAnswers((oldArray: any) => [...oldArray, newAnswer]);
             } else if (collection[nextFirstScenario]) {
+                setPoints((point) => point + nextFirstPoints)
                 alert("COULD NOT FIND QUESTION!");
                 handleScenario(nextFirstScenario);
                 setAnswers((oldArray: any) => [...oldArray, nextFirstAnswer]);
@@ -141,6 +145,7 @@ const QuizLayout = () => {
                                         countAnswer={countAnswer}
                                         data={questionData}
                                         user={user}
+                                        points={points}
                                     />
                                     <RPGLayout
                                         data={questionData}
