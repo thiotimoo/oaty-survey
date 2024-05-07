@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" translate="no">
-            <body className={`${gabarito.className} ${spaceMono.className} overflow-x-hidden`}>
+            <body
+                className={`${gabarito.className} ${spaceMono.className} overflow-x-hidden`}
+            >
                 <div className="grain"></div>
                 <PageTransitionEffect>{children}</PageTransitionEffect>
             </body>
