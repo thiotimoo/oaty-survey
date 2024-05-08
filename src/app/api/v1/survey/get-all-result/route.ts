@@ -8,14 +8,16 @@ const SECRET_KEY = process.env.SECRET_KEY;
 
 export async function GET(req: NextRequest, res: NextResponse) {
     await connectDatabase();
+    const { searchParams } = new URL(req.url);
+    const resultId = searchParams.get("secret");
+
+    if (resultId !== SECRET_KEY)
+        return Response.json({
+            statusCode: 400,
+            error: "Secret key is incorrect",
+        });
     try {
-        const { searchParams } = new URL(req.url);
-        const resultId = searchParams.get("secret");
-        if (resultId !== SECRET_KEY)
-            return Response.json({
-                statusCode: 400,
-                error: "Secret key is incorrect",
-            });
+        
 
         const result = await QuizReport.find();
         if (!result)
