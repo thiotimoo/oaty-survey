@@ -410,6 +410,7 @@ const ClassPage = ({
         } else {
             setError("");
             handleClassroom(classroom);
+            user.class = classroom;
             handleUser(user);
         }
     };

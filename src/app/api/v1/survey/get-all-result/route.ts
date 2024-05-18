@@ -17,8 +17,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
             error: "Secret key is incorrect",
         });
     try {
-        
-
         const result = await QuizReport.find();
         if (!result)
             return Response.json({
